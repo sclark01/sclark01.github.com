@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-   <title>Shea</title>
+   <title>Shea's Website</title>
   </head>
 
   <body>
@@ -28,7 +28,6 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>Shea is 20 Years Old</h1>
-	<p>Shea was born in 1992 to Patty Clark and Gary Tieche</P>
       </section>
     </div>
 
