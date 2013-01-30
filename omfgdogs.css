@@ -1,0 +1,23 @@
+body 
+{
+background-image:url('omfgdogs.gif');
+}
+
+a:link {
+	color: #bde0ea;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 30px;
+	background-color: black;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: 10px 10px 14px #7a7a7a;
+	position: absolute;
+	bottom: 7px;
+	right: 7px;
+	opacity: 0.8;
+}
+
+
+
