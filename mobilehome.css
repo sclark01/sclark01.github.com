@@ -3,24 +3,15 @@ body {
 }
 
 .head {
-	color:#333;
-	border:0px solid red;
-	writing-mode:tb-rl;
-	-webkit-transform:rotate(90deg);
-	-moz-transform:rotate(90deg);
-	-o-transform: rotate(90deg);
-	white-space:nowrap;
-	display:block;
-	bottom:100px;
-	width:20px;
-	height:20px;
-	font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
-	font-size:24px;
-	font-weight:normal;
-	text-shadow: 0px 0px 1px #333;
+	display: block;
+	-webkit-transform: rotate(-90deg);
+	font-weight: 700;
+	
 }
 
 .display {
+	display: block;
 	margin-bottom: 568px;
 	margin-left: 320px;
+	
 }
