@@ -1,3 +1,7 @@
 body {
 	background-color: gray;
 }
+
+.head {
+	-webkit-transform: rotate(180deg);
+}
