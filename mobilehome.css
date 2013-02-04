@@ -4,10 +4,11 @@ body {
 
 .head {
 	display: block;
+	text-align: center;
+	color: black;
+	text-shadow: 2px 3px 4px red
 	-webkit-animation-name: inherit;
 	font-weight: 700;
-	margin-left: 50px;
-	
 }
 
 .display {
