@@ -1,5 +1,6 @@
 body {
-	background: -webkit-linear-gradient(#6161c7 21.52%, #ffffff 100%)
+	background: -webkit-linear-gradient(#6161c7 21.52%, #ffffff 100%);
+	background-size: 50px 1000px;
 }
 .head {
 	font-family: Verdana, Geneva, sans-serif;
