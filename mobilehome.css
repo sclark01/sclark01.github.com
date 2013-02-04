@@ -18,5 +18,9 @@ body {
 	font-size:24px;
 	font-weight:normal;
 	text-shadow: 0px 0px 1px #333;
-	
+}
+
+.display {
+	bottom: 568px;
+	left: 320px;
 }
