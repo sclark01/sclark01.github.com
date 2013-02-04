@@ -23,7 +23,7 @@ body {
 .button {
 	color: red;
 	font-family: Verdana, Geneva, sans-serif;
-	font-size: 30px;	
+	font-size: 60px;	
 	background-color: black;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -31,4 +31,16 @@ body {
 	padding-bottom: 10px;
 	box-shadow:  7px 6px 10px #7a7a7a;
 	opacity: 0.8;	
+}
+
+.left {
+	position:fixed;
+	top: 800px;
+	right: 150px;
+}
+
+.right {
+	position: fixed;
+	top: 800px;
+	right: 150px;
 }
