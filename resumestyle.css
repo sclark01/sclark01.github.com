@@ -9,10 +9,15 @@
 	background-color: rgba(102,101,98,0.5) 
 }
 
+.section {
+	font-size: 18px;
+}
+
 .indent1 {
-	color: aqua;
+	font-style: italic;
+	margin-left: 30px;
 } 
 
 .indent2 {
-	color: red;
+	margin-left: 60px;
 }
