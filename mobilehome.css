@@ -12,8 +12,7 @@ body {
 
 .display {
 	display: block;
-	margin-top: 568px;
-	margin-left: 20px;
-	width: 600px
+	width: 960px;
+	height: 500px;
 	
 }
