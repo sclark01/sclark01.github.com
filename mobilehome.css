@@ -15,9 +15,8 @@ body {
 
 .display {
 	display: block;
-	width: 960px;
-	height: 960px;
-	
+	width: 700px;
+	height: 700px;
 }
 
 .button {
@@ -35,12 +34,12 @@ body {
 
 .left {
 	position:fixed;
-	top: 1000px;
-	left: 150px;
+	top: 900px;
+	left: 75px;
 }
 
 .right {
 	position: fixed;
-	top: 800px;
-	right: 150px;
+	top: 900px;
+	right: 75px;
 }
