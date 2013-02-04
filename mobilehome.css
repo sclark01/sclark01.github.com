@@ -6,7 +6,7 @@ body {
 	display: block;
 	-webkit-transform: rotate(-90deg);
 	font-weight: 700;
-	text-align: left;
+	margin-left: 50px;
 	
 }
 
