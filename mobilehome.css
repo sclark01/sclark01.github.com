@@ -4,7 +4,7 @@ body {
 
 .head {
 	display: block;
-	-webkit-transform: rotate(-90deg);
+	-webkit-animation-name: inherit;
 	font-weight: 700;
 	margin-left: 50px;
 	
@@ -12,7 +12,7 @@ body {
 
 .display {
 	display: block;
-	margin-bottom: 568px;
+	margin-top: 650px;
 	margin-left: 320px;
 	
 }
