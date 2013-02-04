@@ -4,9 +4,10 @@ body {
 
 .head {
 	display: block;
+	font-family: Verdana, Geneva, sans-serif;
 	text-align: center;
 	color: black;
-	text-shadow: 2px 3px 4px red
+	text-shadow: 2px 3px 4px red;
 	-webkit-animation-name: inherit;
 	font-weight: 700;
 }
