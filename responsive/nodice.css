@@ -5,7 +5,8 @@
 
 .center {
 	text-align: center;
-	font-size: larger;
+	font-size: 50px;
+	text-decoration: underline;
 }
 
 body {
