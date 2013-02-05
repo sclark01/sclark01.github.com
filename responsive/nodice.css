@@ -1,0 +1,14 @@
+.nonmobile {
+	display: none;
+	visibility: hidden;
+}
+
+.center {
+	text-align: center;
+}
+
+.display {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
