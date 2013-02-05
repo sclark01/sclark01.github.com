@@ -8,7 +8,7 @@ h4 {
 }
 
 .education {
-	background-image: -webkit-linear-gradient(#6744b0 0%, #ffffff 70.2%);
+	background-image: -webkit-linear-gradient(#4545f1 0%, #ffffff 70.2%);
 	border-top: 15px dashed black;
 	border-bottom: 15px dashed black;
 }
@@ -26,6 +26,9 @@ h4 {
 
 .center {
 	text-align: center;
+}
+
+.titlebox {
 	border-style: outset;
 	border-bottom-color: black;
 	border-top-color: white;
@@ -46,4 +49,25 @@ h4 {
 .indent2 {
 	margin-left: 60px;
 }
+
+.paragraph {
+	background-color: #a9ffff;
+	box-shadow: inset 7px 9px 100px 9px #ffffff;
+	font-style: italic;
+	opacity: 0.6;
+}
+
+.bio {
+	background-color: #a4ffbe;
+}
+
+.display {
+	display: block;
+	width: 480px;
+	height: 360px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 
