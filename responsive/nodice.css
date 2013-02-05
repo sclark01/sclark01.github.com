@@ -7,8 +7,7 @@
 	text-align: center;
 }
 
-.display {
-	display: block;
-	width: 620px;
-	height: 800px;
+body {
+	background-image: url(nodice.jpg);
+	background-size: auto;
 }
