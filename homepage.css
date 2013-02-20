@@ -3,13 +3,24 @@ body {
 	background-repeat: repeat-y;
 	background-size: cover;
 }
-.head {
+/*.head {
 	font-family: Verdana, Geneva, sans-serif;
 	color: #b3b3b3; 
 	text-align: center;
 	text-shadow: 1px 4px 11px #8b8b8b;
 	}
-	
+*/
+
+.head {
+	font-family: 'Lobster', cursive;
+	font-size: 8em;
+	line-height:0em;
+	font-weight: 800;
+	text-shadow: 1px 4px 11px #8b8b8b;
+	text-align: center;
+	color: #b3b3b3;
+}	
+
 img.display {
 	display: block;
 	margin-left: auto;
