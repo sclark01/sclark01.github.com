@@ -123,11 +123,11 @@ function find_distance(lat1, lon1){
 		lat2 = stations_all[i].lat();
 		lon2 = stations_all[i].lng();
 		temp = haversine(lat1, lon1, lat2, lon2);
-		console.log(temp);
+		
 		if (temp < dis){
 			dis = temp;
 			}
-	/*	if (i < 6){
+		if (i < 6){
 		lat2 = stations_ash[i].lat();
 		lon2 = stations_ash[i].lng();
 		temp = haversine(lat1,lon1,lat2,lon2);
@@ -135,14 +135,14 @@ function find_distance(lat1, lon1){
 			dis = temp;
 			}
 			if (i < 5){
-				lat2 = stations_ash[i].lat();
-				lon2 = stations_ash[i].lng();
+				lat2 = stations_brn[i].lat();
+				lon2 = stations_brn[i].lng();
 				temp = haversine(lat1,lon1,lat2,lon2);
 				if (temp < dis){
 					dis = temp;
 				}
 			}
-		}*/
+		}
 	}
 	
 	return dis;
