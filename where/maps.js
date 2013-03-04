@@ -1,15 +1,17 @@
 function run() {
-        var mapOptions = {
+        draw_map();
+        get_location();
+
+}
+function draw_map(){
+	var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-        get_location();
-
 }
-
 function get_location(){
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(showPosition);
@@ -20,5 +22,6 @@ function get_location(){
 }
 
 function showPosition(position){
-	alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+	var LatLng = position.coords.latitude + position.coords.longitude;
+	console.log(LatLng);
 }
