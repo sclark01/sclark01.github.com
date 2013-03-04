@@ -1,5 +1,5 @@
 var map;
-var stations[];
+var stations;
 
 function run() {
 
@@ -48,7 +48,7 @@ function showPosition(position){
 
 function draw_station(){
 	station_coordinates();
-	var stop[];
+	var stop;
 	for (int i = 0; i < 4; i++){
 		stop[i] = new google.maps.Marker({
 			position: stations[i],
