@@ -50,6 +50,7 @@ function showPosition(position){
 	var name = closest_stop[1];
 	name = stop_names[1];
 	
+	
 	mycontent = "Closest station from you is " + name + ", which is " + distance + " miles away.";
 	
 	var myInfo = new google.maps.InfoWindow({
@@ -61,10 +62,24 @@ function showPosition(position){
 		map: map,
 		title: "Current Location"
 	});
+	draw_closest(lat1, lon1, name);
+	
 
 	myInfo.open(map, marker);	
 }
 
+function draw_closest(lat1, lon1, stop){
+	var path_arr = [];
+	path_arr[0] = stations_all[stop];
+	path_arr[1] = new google.maps.LatLng(lat1,lon1);
+	
+	var closest_route = new google.maps.Polyline({
+		path:path_arr,
+		strokeColor: "#5200ff",
+		strokeOpacity: 0.7,
+		strokeWeight: 7.0,
+	});
+}
 function draw_station(){
 	station_coordinates();
 	names();
@@ -104,6 +119,7 @@ function draw_station(){
 	}
 	paths();
 }
+
 
 function paths(){
 
