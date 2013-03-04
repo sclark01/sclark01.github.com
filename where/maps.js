@@ -37,6 +37,7 @@ function get_location(){
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	mycontent = "Closest station from you is: " + find_distance(position.coords.latitude, position.coords.longitude) + " miles away.";
+	console.log(position.coords.latitude);
 	var myInfo = new google.maps.InfoWindow({
 		content: mycontent
 	});
@@ -115,7 +116,7 @@ function paths(){
 function find_distance(lat1, lon1){
 	var dis;
 	var temp;
-	console.log(lat1, lon1);
+	
 	for(i = 0; i < 13; i++) {
 		lat2 = stations_all[i].lat();
 		lon2 = stations_all[i].lng();
