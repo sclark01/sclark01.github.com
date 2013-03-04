@@ -24,7 +24,7 @@ function get_location(){
 
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	var say = 'NO';
+	x = 'NO';
 	console.log(say);
 	infowindow = new google.maps.InfoWindow();
 	infowindow.setPosition(myLatLng);
