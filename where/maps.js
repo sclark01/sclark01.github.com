@@ -148,7 +148,7 @@ function find_distance(lat1, lon1){
 			}
 		}
 			
-	return closest[dis,station];
+	return closest_stop[dis,station];
 }
 function haversine(lat1, lon1, lat2, lon2){
 
