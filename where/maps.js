@@ -16,7 +16,7 @@ function run() {
 function get_location(){
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(showPosition);
-		var x = showPosition.myLatLng;
+		var x = showPosition();
 		alert(x);
 		}
 	else {
@@ -26,12 +26,14 @@ function get_location(){
 
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	alert(myLatLng);
+	//alert(myLatLng);
 	var myInfo = new google.maps.InfoWindow({
 		content: "HERE I AM"
 	});
 	
-	var marker = new google.maps.Marker({
+	return myLatLng;
+	
+/*	var marker = new google.maps.Marker({
 		position: myLatLng,
 		map: map,
 		title: "Current Location"
@@ -39,5 +41,5 @@ function showPosition(position){
 	
 	google.maps.event.addListener(marker, 'click', function(){
 		infowindow.open(map, marker);
-	});
+	}); */
 }
