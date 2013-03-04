@@ -58,7 +58,8 @@ function showPosition(position){
 
 function draw_station(){
 	station_coordinates();
-	
+	console.log(stations_all[0].name);
+	/*
 	var stop_all = [];
 	var stop_ash = [];
 	var stop_brn = [];
@@ -94,7 +95,7 @@ function draw_station(){
 	}
 	paths();
 }
-
+*/
 function paths(){
 
 	var non_branched = [];
@@ -161,8 +162,8 @@ Number.prototype.toRad = function() {
 }
 
 function station_coordinates(){
-	stations_all[0] = new google.maps.LatLng(42.395382,-71.142633);
-	stations_all[1] = new google.maps.LatLng(42.396967,-71.122935);
+	stations_all[0] = { location: new google.maps.LatLng(42.395382,-71.142633), name: 'alewife'};
+	/*stations_all[1] = new google.maps.LatLng(42.396967,-71.122935);
 	stations_all[2] = new google.maps.LatLng(42.388441,-71.119266);
 	stations_all[3] = new google.maps.LatLng(42.373534,-71.118976);
 	stations_all[4] = new google.maps.LatLng(42.36552,-71.104116);
@@ -195,7 +196,7 @@ function station_coordinates(){
 	stations_brn[2] = new google.maps.LatLng(42.266448,-71.020346);
 	stations_brn[3] = new google.maps.LatLng(42.251774,-71.004896);
 	stations_brn[4] = new google.maps.LatLng(42.233347,-71.007128);
-	stations_brn[5] = new google.maps.LatLng(42.208081,-71.001248);
+	stations_brn[5] = new google.maps.LatLng(42.208081,-71.001248);*/
 }
 
 
