@@ -37,4 +37,5 @@ function showPosition(position){
 	infowindow = new google.maps.InfoWindow();
 	infowindow.setPosition(myLatLng);
 	infowindow.setContent(say);
+	infowindow.open();
 }
