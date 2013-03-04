@@ -1,9 +1,4 @@
 
-
-
-
-
-
 function run() {
 	var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
@@ -20,10 +15,10 @@ function run() {
 
 function get_location(){
 	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(showPosition);
+		x = navigator.geolocation.getCurrentPosition(showPosition);
 		}
 	else {
-		alert("GeoLocation is Not Enabled on this device");
+		alert("GeoLocation is not enabled on this device");
 	}
 }
 
