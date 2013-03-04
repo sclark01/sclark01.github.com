@@ -125,14 +125,14 @@ function find_distance(lat1, lon1){
 			}
 		if (i < 6){
 		lat2 = stations_ash[i].lat();
-		lon2 = stations_ash[i].lon();
+		lon2 = stations_ash[i].lng();
 		temp = haversine(lat1,lon1,lat2,lon2);
 		if (temp < dis){
 			dis = temp;
 			}
 			if (i < 5){
 				lat2 = stations_ash[i].lat();
-				lon2 = stations_ash[i].lon();
+				lon2 = stations_ash[i].lng();
 				temp = haversine(lat1,lon1,lat2,lon2);
 				if (temp < dis){
 					dis = temp;
