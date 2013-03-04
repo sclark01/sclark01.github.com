@@ -119,7 +119,7 @@ function find_distance(lat1, lon1){
 	var dis = 100;
 	var temp;
 	
-	for(i = 0; i < 13; i++) {
+	for(i = 0; i < num_stops; i++) {
 		lat2 = stations_all[i].lat();
 		lon2 = stations_all[i].lng();
 		temp = haversine(lat1, lon1, lat2, lon2);
@@ -127,24 +127,8 @@ function find_distance(lat1, lon1){
 		if (temp < dis){
 			dis = temp;
 			}
-		if (i < 6){
-		lat2 = stations_ash[i].lat();
-		lon2 = stations_ash[i].lng();
-		temp = haversine(lat1,lon1,lat2,lon2);
-		if (temp < dis){
-			dis = temp;
-			}
-			if (i < 5){
-				lat2 = stations_brn[i].lat();
-				lon2 = stations_brn[i].lng();
-				temp = haversine(lat1,lon1,lat2,lon2);
-				if (temp < dis){
-					dis = temp;
-				}
-			}
 		}
-	}
-	
+			
 	return dis;
 }
 function haversine(lat1, lon1, lat2, lon2){
@@ -180,6 +164,16 @@ function station_coordinates(){
 	stations_all[10] = new google.maps.LatLng(42.342559,-71.057038);
 	stations_all[11] = new google.maps.LatLng(42.330147,-71.057392);
 	stations_all[12] = new google.maps.LatLng(42.320668,-71.052189);
+	
+	stations_all[13] = new google.maps.LatLng(42.311275,-71.053391);
+	stations_all[14] = new google.maps.LatLng(42.30004,-71.06163);
+	stations_all[15] = new google.maps.LatLng(42.293088,-71.065793);
+	stations_all[16] = new google.maps.LatLng(42.284612,-71.064205); 
+	stations_all[17] = new google.maps.LatLng(42.276039,-71.029444);
+	stations_all[18] = new google.maps.LatLng(42.266448,-71.020346);
+	stations_all[19] = new google.maps.LatLng(42.251774,-71.004896);
+	stations_all[20] = new google.maps.LatLng(42.233347,-71.007128);
+	stations_all[21] = new google.maps.LatLng(42.208081,-71.001248);
 	
 	stations_ash[0] = new google.maps.LatLng(42.320668,-71.052189);
 	stations_ash[1] = new google.maps.LatLng(42.311275,-71.053391);
