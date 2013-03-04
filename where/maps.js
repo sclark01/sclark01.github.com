@@ -48,6 +48,7 @@ function showPosition(position){
 	var closest_stop = find_distance(lat1, lon1);
 	var distance = closest_stop[0];
 	var name = closest_stop[1];
+	draw_closest(lat1, lon1, name);
 	name = stop_names[1];
 	
 	
@@ -62,7 +63,7 @@ function showPosition(position){
 		map: map,
 		title: "Current Location"
 	});
-	draw_closest(lat1, lon1, name);
+	
 	
 
 	myInfo.open(map, marker);	
@@ -81,6 +82,7 @@ function draw_closest(lat1, lon1, stop){
 		strokeWeight: 7.0,
 	});
 }
+
 function draw_station(){
 	station_coordinates();
 	names();
