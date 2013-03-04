@@ -15,7 +15,7 @@ function run() {
 
 function get_location(){
 	if (navigator.geolocation){
-		x = navigator.geolocation.getCurrentPosition(showPosition);
+		navigator.geolocation.getCurrentPosition(showPosition);
 		}
 	else {
 		alert("GeoLocation is not enabled on this device");
@@ -24,5 +24,5 @@ function get_location(){
 
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	return position;
+	alert(myLatLng);
 }
