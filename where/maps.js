@@ -1,4 +1,8 @@
+var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+
 function run() {
+	
         draw_map();
         get_location();
 
