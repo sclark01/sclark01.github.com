@@ -22,6 +22,6 @@ function get_location(){
 }
 
 function showPosition(position){
-	var LatLng = position.coords.latitude + position.coords.longitude;
-	console.log(LatLng);
+	InfoWindow(LatLng(lat: position.coords.latitude, lng = position.coords.longitude));
+	
 }
