@@ -2,6 +2,13 @@ var map;
 
 function run() {
 
+	   draw_map();  
+       get_location();
+
+}
+
+function draw_map() {
+	
 	var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
           zoom: 11,
@@ -10,9 +17,6 @@ function run() {
         
     map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-            
-       get_location();
-
 }
 
 function get_location(){
@@ -27,7 +31,6 @@ function get_location(){
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	
-	alert(myLatLng);
 	var myInfo = new google.maps.InfoWindow({
 		content: "HERE I AM"
 	});
