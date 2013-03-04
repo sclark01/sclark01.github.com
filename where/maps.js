@@ -123,6 +123,7 @@ function find_distance(lat1, lon1){
 		lat2 = stations_all[i].lat();
 		lon2 = stations_all[i].lng();
 		temp = haversine(lat1, lon1, lat2, lon2);
+		console.log(temp);
 		if (temp < dis){
 			dis = temp;
 			}
@@ -161,7 +162,7 @@ Number.prototype.toRad = function() {
 	var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 	var d = R * c;
-	console.log(d);
+
 	return d;
 }
 
