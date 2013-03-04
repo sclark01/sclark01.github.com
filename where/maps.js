@@ -25,4 +25,17 @@ function get_location(){
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	alert(myLatLng);
+	var myInfo = new google.maps.InfoWindow({
+		content: "HERE I AM"
+	});
+	
+	var marker = new google.maps.Marker({
+		position: myLatLng,
+		map: map,
+		title: "Current Location"
+	});
+	
+	google.maps.event.addListener(marker, 'click', function(){
+		infowindow.open(map, marker);
+	});
 }
