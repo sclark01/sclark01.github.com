@@ -22,6 +22,7 @@ function get_location(){
 }
 
 function showPosition(position){
-	InfoWindow(LatLng(lat: position.coords.latitude, lng = position.coords.longitude));
+	var pop_up = new google.maps.InfoWindow({content: "HEY"});
+	pop_up.open(map);
 	
 }
