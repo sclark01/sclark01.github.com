@@ -9,11 +9,11 @@ function run() {
     var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
             
-       get_location(map);
+       get_location();
 
 }
 
-function get_location(map){
+function get_location(){
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(showPosition);
 		}
@@ -22,7 +22,7 @@ function get_location(map){
 	}
 }
 
-function showPosition(position, map){
+function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	alert(myLatLng);
 	var myInfo = new google.maps.InfoWindow({
