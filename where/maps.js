@@ -1,23 +1,22 @@
 
-function run() {
-       var mymap = draw_map();
-       get_location(mymap);
 
-}
 
-function draw_map(){
-	var mapOptions = {
+var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
+        
+var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-            
-    return map;
+
+
+function run() {
+       get_location();
+
 }
 
-function get_location(mymap){
+function get_location(){
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(showPosition);
 		}
@@ -27,12 +26,13 @@ function get_location(mymap){
 }
 
 function showPosition(position){
-
-	var pop_up = new google.maps.InfoWindow({content: "HEY"});
-	var marker = new google.maps.Marker({position: position, title: "Hello World"});
-
-	google.maps.event.addlistener(marker, 'click', function(){
-	infowindow.open(mymap, marker)
-});
+	var myLatLng = {
+		lat: position.coords.latitude, 
+		lng: position.coords.longitutde
+		}; 
+	var say = "NO";
 	
+	infowindow = new google.maps.InfoWindow();
+	infowindow.setPosition(myLatLng);
+	infowindow.setContent(say);
 }
