@@ -145,10 +145,10 @@ function find_distance(lat1, lon1){
 function haversine(lat1, lon1, lat2, lon2){
 
 	var R = 6371;
-	var dLat = (lat2 - lat1).torad();
-	var dLon = (lon2 - lon1).torad();
-	var lat1 = lat1.torad();
-	var lat2 = lat2.torad();
+	var dLat = (lat2 - lat1).toRad();
+	var dLon = (lon2 - lon1).toRad();
+	var lat1 = lat1.toRad();
+	var lat2 = lat2.toRad();
 	
 	var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
