@@ -1,7 +1,9 @@
 var map;
+var mycontent;
 var stations_all = [];
 var stations_ash = [];
 var stations_brn = [];
+var num_stops = 22;
 
 function run() {
 
@@ -34,9 +36,9 @@ function get_location(){
 
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	
+	mycontent = "Closest station from you is: " + find_distance(position.coords.latitude, position.coords.longitude) + " miles away.";
 	var myInfo = new google.maps.InfoWindow({
-		content: "HERE I AM"
+		content: mycontent
 	});
 	
 	var marker = new google.maps.Marker({
@@ -50,7 +52,7 @@ function showPosition(position){
 
 function draw_station(){
 	station_coordinates();
-	var num_stops = 22;
+	
 	var stop_all = [];
 	var stop_ash = [];
 	var stop_brn = [];
@@ -109,6 +111,50 @@ function paths(){
 	route_all.setMap(map);
 	route_ash.setMap(map);
 	route_brn.setMap(map);
+}
+function find_distance(lat1, lon1){
+	var dis;
+	var temp;
+	
+	for(i = 0; i < 13; i++) {
+		lat2 = stations_all[i].lat();
+		lon2 = stations_all[i].lng();
+		temp = haversine(lat1, lon1, lat2, lon2);
+		if (temp < dis){
+			dis = temp;
+			}
+		if (i < 6){
+		lat2 = stations_ash[i].lat();
+		lon2 = stations_ash[i].lon();
+		temp = haversine(lat1,lon1,lat2,lon2);
+		if (temp < dis){
+			dis = temp;
+			}
+			if (i < 5){
+				lat2 = stations_ash[i].lat();
+				lon2 = stations_ash[i].lon();
+				temp = haversine(lat1,lon1,lat2,lon2);
+				if (temp < dis){
+					dis = temp;
+				}
+			}
+		}
+	}
+	return dis;
+}
+function haversine(lat1, lon1, lat2, lon2){
+
+	var R = 6371;
+	var dLat = (lat2 - lat1).torad();
+	var dLon = (lon2 - lon1).torad();
+	var lat1 = lat1.torad();
+	var lat2 = lat2.torad();
+	
+	var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+	var d = R * c;
+	
+	return d;
 }
 
 function station_coordinates(){
