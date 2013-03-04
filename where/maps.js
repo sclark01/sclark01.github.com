@@ -35,7 +35,7 @@ function showPosition(position){
 	var say = "NO";
 	console.log("here bitcg");
 	infowindow = new google.maps.InfoWindow();
-	infowindow.setPosition(position.coords.latitude, position.coords.longitude);
+	infowindow.setPosition(myLatLng);
 	infowindow.setContent(say);
 	infowindow.open();
 }
