@@ -1,4 +1,4 @@
-var location[];
+var map;
 
 function run() {
 
@@ -8,7 +8,7 @@ function run() {
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         
-    var map = new google.maps.Map(document.getElementById("map_canvas"),
+    map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
             
        get_location();
@@ -26,7 +26,7 @@ function get_location(){
 
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	location[0] = myLatLng;
+	
 	alert(myLatLng);
 	var myInfo = new google.maps.InfoWindow({
 		content: "HERE I AM"
