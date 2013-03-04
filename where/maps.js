@@ -1,5 +1,7 @@
+var location[];
 
 function run() {
+
 	var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
           zoom: 11,
@@ -24,6 +26,7 @@ function get_location(){
 
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	location[0] = myLatLng;
 	alert(myLatLng);
 	var myInfo = new google.maps.InfoWindow({
 		content: "HERE I AM"
