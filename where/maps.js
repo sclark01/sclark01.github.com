@@ -3,6 +3,7 @@ var mycontent;
 var stations_all = [];
 var stations_ash = [];
 var stations_brn = [];
+var stop_names = [];
 var num_stops = 22;
 var stops_b4_branch = 13;
 var ash_stops = 5;
@@ -47,8 +48,9 @@ function showPosition(position){
 	var closest_stop = find_distance(lat1, lon1);
 	var distance = closest_stop[0];
 	var name = closest_stop[1];
+	name = stop_names[1];
 	
-	mycontent = "Closest station from you is: " + name + " which is " + distance + " miles away.";
+	mycontent = "Closest station from you is " + name + ", which is " + distance + " miles away.";
 	
 	var myInfo = new google.maps.InfoWindow({
 		content: mycontent
@@ -65,6 +67,7 @@ function showPosition(position){
 
 function draw_station(){
 	station_coordinates();
+	names();
 	
 	var stop_all = [];
 	var stop_ash = [];
@@ -206,6 +209,32 @@ function station_coordinates(){
 	stations_brn[4] = new google.maps.LatLng(42.233347,-71.007128);
 	stations_brn[5] = new google.maps.LatLng(42.208081,-71.001248);
 }
+
+function names(){
+	stop_names[0] = 'Alewife';
+	stop_names[1] = 'Davis';
+	stop_names[2] = 'Porter';
+	stop_names[3] = 'Harvard';
+	stop_names[4] = 'Central';
+	stop_names[5] = 'Kendal/MIT';
+	stop_names[6] = 'Charles/MGH';
+	stop_names[7] = 'Park Street';
+	stop_names[8] = 'Downtown Crossing';
+	stop_names[9] = 'South Station';
+	stop_names[10] = 'Broadway';
+	stop_names[11] = 'Andrew';
+	stop_names[12] = 'JFK/UMass';
+	stop_names[13] = 'Salvin Hill';
+	stop_names[14] = 'Fields Corner';
+	stop_names[15] = 'Shawmut';
+	stop_names[16] = 'Ashmont';
+	stop_names[17] = 'North Quincy';
+	stop_names[18] = 'Wollaston';
+	stop_names[19] = 'Quincy Center';
+	stop_names[20] = 'Quincy Adams';
+	stop_names[21] = 'Braintree';
+}
+
 
 
 
