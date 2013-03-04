@@ -18,14 +18,14 @@ function draw_map(){
 
 function get_location(mymap){
 	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(showPosition);
+		navigator.geolocation.getCurrentPosition(showPosition(mymap));
 		}
 	else {
 		alert("GeoLocation is Not Enabled on this device");
 	}
 }
 
-function showPosition(position){
+function showPosition(position, mymap){
 	var popOptions = {
 		
 	}
