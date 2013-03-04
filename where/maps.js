@@ -119,11 +119,9 @@ function find_distance(lat1, lon1){
 	var dis;
 	var temp;
 	
-	console.log(lat1);
-	console.log(lon1);
-	
 	for(i = 0; i < 13; i++) {
 		lat2 = stations_all[i].lat();
+		console.log(stations_all[i].lat())
 		lon2 = stations_all[i].lng();
 		temp = haversine(lat1, lon1, lat2, lon2);
 		if (temp < dis){
