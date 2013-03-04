@@ -93,8 +93,14 @@ function draw_station(){
 }
 
 function paths(){
+
+	var non_branched = [];
+	
+	for (i = 0; i < 13; i++){
+		non_branched[i] = stations_all[i];
+		}
 	var route_all = new google.maps.Polyline({
-		path:stations_all,
+		path:non_branched,
 		strokeColor: "#FF0000",
 		strokeOpacity: 0.7,
 		strokeWeight: 7.0,
@@ -164,7 +170,6 @@ function station_coordinates(){
 	stations_all[10] = new google.maps.LatLng(42.342559,-71.057038);
 	stations_all[11] = new google.maps.LatLng(42.330147,-71.057392);
 	stations_all[12] = new google.maps.LatLng(42.320668,-71.052189);
-	
 	stations_all[13] = new google.maps.LatLng(42.311275,-71.053391);
 	stations_all[14] = new google.maps.LatLng(42.30004,-71.06163);
 	stations_all[15] = new google.maps.LatLng(42.293088,-71.065793);
