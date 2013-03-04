@@ -23,6 +23,6 @@ function get_location(){
 
 function showPosition(position){
 	var pop_up = new google.maps.InfoWindow({content: "HEY"});
-	pop_up.open(map);
+	pop_up.open(map,position);
 	
 }
