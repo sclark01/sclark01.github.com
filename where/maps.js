@@ -140,6 +140,7 @@ function find_distance(lat1, lon1){
 			}
 		}*/
 	}
+	console.log(dis);
 	return dis;
 }
 function haversine(lat1, lon1, lat2, lon2){
