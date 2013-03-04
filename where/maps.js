@@ -147,7 +147,7 @@ function find_distance(lat1, lon1){
 	return dis;
 }
 function haversine(lat1, lon1, lat2, lon2){
-
+console.log(lat1,lon1, lat2, lon2);
 	var R = 6371;
 	var dLat = (lat2 - lat1).toRad();
 	var dLon = (lon2 - lon1).toRad();
