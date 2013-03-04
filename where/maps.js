@@ -70,7 +70,7 @@ function showPosition(position){
 }
 
 function draw_closest(lat1, lon1, stop){
-	console.log(lat1, lon1, stop);
+
 	var path_arr = [];
 	path_arr[0] = stations_all[stop];
 	path_arr[1] = new google.maps.LatLng(lat1,lon1);
@@ -81,6 +81,8 @@ function draw_closest(lat1, lon1, stop){
 		strokeOpacity: 0.7,
 		strokeWeight: 7.0,
 	});
+	
+	closest_route.setMap(map);
 }
 
 function draw_station(){
