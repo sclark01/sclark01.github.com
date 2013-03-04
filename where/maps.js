@@ -55,8 +55,7 @@ function draw_station(){
 	var stop_ash = [];
 	var stop_brn = [];
 
-	t_logo = new Image;
-	t_logo.src = 'images/tlogo.png';
+	t_logo = 'images/tlogo.png';
 
 	
 	for (i = 0; i < 13; i++){
