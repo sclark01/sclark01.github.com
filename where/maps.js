@@ -54,26 +54,33 @@ function draw_station(){
 	var stop_all = [];
 	var stop_ash = [];
 	var stop_brn = [];
+
+	t_logo = new Image;
+	t_logo.src = 'images/tlogo.png';
+
 	
 	for (i = 0; i < 13; i++){
 			stop_all[i] = new google.maps.Marker({
 				position: stations_all[i],
 				map: map,
-				title: ""
+				title: "",
+				icon: t_logo
 				});
 		
 	for (j = 0; j < 5; j++){
 		stop_ash[j] = new google.maps.Marker({
 			position: stations_ash[j],
 			map: map,
-			title: ""
+			title: "",
+			icon: t_logo
 			});
 		}
 	for (w = 0; w < 6; w++){
 		stop_brn[j] = new google.maps.Marker({
-			position: stations_brn[j],
+			position: stations_brn[w],
 			map: map,
-			title: ""
+			title: "",
+			icon: t_logo
 			});
 		}
 					
@@ -84,21 +91,21 @@ function draw_station(){
 function paths(){
 	var route_all = new google.maps.Polyline({
 		path:stations_all,
-		strokecolor: "#FF0000",
-		strokeOpacity: 1.0,
-		strokeWeight: 2.0,
+		strokeColor: "#FF0000",
+		strokeOpacity: 0.7,
+		strokeWeight: 7.0,
 	});
 	var route_ash = new google.maps.Polyline({
 		path:stations_ash,
-		strokecolor: "#FF0000",
-		strokeOpacity: 1.0,
-		strokeWeight: 2.0,
+		strokeColor: "#FF0000",
+		strokeOpacity: 0.7,
+		strokeWeight: 7.0,
 	});
 	var route_brn = new google.maps.Polyline({
 		path:stations_brn,
-		strokecolor: "#FF0000",
-		strokeOpacity: 1.0,
-		strokeWeight: 2.0,
+		strokeColor: "#FF0000",
+		strokeOpacity: 0.7,
+		strokeWeight: 7.0,
 	});
 	route_all.setMap(map);
 	route_ash.setMap(map);
