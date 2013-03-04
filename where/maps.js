@@ -1,17 +1,19 @@
 
 
 
-var mapOptions = {
+
+
+
+function run() {
+	var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         
-var map = new google.maps.Map(document.getElementById("map_canvas"),
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-
-
-function run() {
+            
        get_location();
 
 }
