@@ -4,6 +4,9 @@ var stations_all = [];
 var stations_ash = [];
 var stations_brn = [];
 var num_stops = 22;
+var stops_b4_branch = 13;
+var ash_stops = 5;
+var brn_stops = 6;
 
 function run() {
 
@@ -63,7 +66,7 @@ function draw_station(){
 	t_logo = 'images/tlogo.png';
 
 	
-	for (i = 0; i < 13; i++){
+	for (i = 0; i < stops_b4_branch; i++){
 			stop_all[i] = new google.maps.Marker({
 				position: stations_all[i],
 				map: map,
@@ -71,7 +74,7 @@ function draw_station(){
 				icon: t_logo
 				});
 		
-	for (j = 0; j < 5; j++){
+	for (j = 0; j < ash_stops; j++){
 		stop_ash[j] = new google.maps.Marker({
 			position: stations_ash[j],
 			map: map,
@@ -79,7 +82,7 @@ function draw_station(){
 			icon: t_logo
 			});
 		}
-	for (w = 0; w < 6; w++){
+	for (w = 0; w < brn_stops; w++){
 		stop_brn[j] = new google.maps.Marker({
 			position: stations_brn[w],
 			map: map,
@@ -96,9 +99,10 @@ function paths(){
 
 	var non_branched = [];
 	
-	for (i = 0; i < 13; i++){
+	for (i = 0; i < stops_b4_branch; i++){
 		non_branched[i] = stations_all[i];
 		}
+		
 	var route_all = new google.maps.Polyline({
 		path:non_branched,
 		strokeColor: "#FF0000",
