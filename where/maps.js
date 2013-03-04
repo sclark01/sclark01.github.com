@@ -30,12 +30,12 @@ function get_location(){
 function showPosition(position){
 	var myLatLng = {
 		lat: position.coords.latitude, 
-		lng: position.coords.longitutde
+		lng: position.coords.longitude
 		}; 
 	var say = "NO";
 	console.log("here bitcg");
 	infowindow = new google.maps.InfoWindow();
-	infowindow.setPosition(myLatLng);
+	infowindow.setPosition(position.coords.latitude, position.coords.longitude);
 	infowindow.setContent(say);
 	infowindow.open();
 }
