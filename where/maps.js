@@ -49,7 +49,7 @@ function showPosition(position){
 function draw_station(){
 	station_coordinates();
 	var stop;
-	for (int i = 0; i < 4; i++){
+	for (i = 0; i < 4; i++){
 		stop[i] = new google.maps.Marker({
 			position: stations[i],
 			map: map,
