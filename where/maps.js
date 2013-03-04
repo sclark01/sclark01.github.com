@@ -10,7 +10,7 @@ function run() {
 function draw_map() {
 	
 	var mapOptions = {
-          center: new google.maps.LatLng(42.317939,-71.081543),
+          center: new google.maps.LatLng(42.3583, -71.0603),
           zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
