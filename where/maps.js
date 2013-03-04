@@ -33,7 +33,7 @@ function showPosition(position){
 		lng: position.coords.longitutde
 		}; 
 	var say = "NO";
-	
+	console.log("here bitcg");
 	infowindow = new google.maps.InfoWindow();
 	infowindow.setPosition(myLatLng);
 	infowindow.setContent(say);
