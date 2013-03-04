@@ -28,10 +28,7 @@ function get_location(){
 }
 
 function showPosition(position){
-	var myLatLng = {
-		lat: position.coords.latitude, 
-		lng: position.coords.longitude
-		}; 
+	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	var say = "NO";
 	console.log("here bitcg");
 	infowindow = new google.maps.InfoWindow();
