@@ -11,7 +11,7 @@ function draw_map() {
 	
 	var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
-          zoom: 11,
+          zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         
@@ -40,8 +40,7 @@ function showPosition(position){
 		map: map,
 		title: "Current Location"
 	});
+
+	myInfo.open(map, marker);
 	
-	google.maps.event.addListener(marker, 'click', function(){
-		myInfo.open(map, marker);
-	}); 
 }
