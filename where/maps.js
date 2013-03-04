@@ -4,7 +4,7 @@ var map = new google.maps.Map(document.getElementById("map_canvas"),
 function run() {
 	
         draw_map();
-        get_location();
+        get_location(map);
 
 }
 function draw_map(){
@@ -18,14 +18,14 @@ function draw_map(){
 }
 function get_location(){
 	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(showPosition);
+		navigator.geolocation.getCurrentPosition(showPosition, map);
 		}
 	else {
 		alert("GeoLocation is Not Enabled on this device");
 	}
 }
 
-function showPosition(position){
+function showPosition(position, map){
 	var pop_up = new google.maps.InfoWindow({content: "HEY"});
 	pop_up.open(map,position);
 	
