@@ -39,6 +39,6 @@ function showPosition(position){
 	});
 	
 	google.maps.event.addListener(marker, 'click', function(){
-		infowindow.open(map, marker);
+		myInfo.open(map, marker);
 	}); 
 }
