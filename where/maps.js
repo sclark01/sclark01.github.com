@@ -36,8 +36,10 @@ function get_location(){
 
 function showPosition(position){
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	mycontent = "Closest station from you is: " + find_distance(position.coords.latitude, position.coords.longitude) + " miles away.";
-	console.log(position.coords.latitude);
+	lat1 = position.coords.latitude;
+	lon1 = position.coords.longitude;
+	mycontent = "Closest station from you is: " + find_distance(lat1, lon1) + " miles away.";
+	
 	var myInfo = new google.maps.InfoWindow({
 		content: mycontent
 	});
