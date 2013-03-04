@@ -38,10 +38,17 @@ function get_location(){
 }
 
 function showPosition(position){
+
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	
 	lat1 = position.coords.latitude;
 	lon1 = position.coords.longitude;
-	mycontent = "Closest station from you is: " + find_distance(lat1, lon1) + " miles away.";
+	
+	var closest_stop = find_distance(lat1, lon1);
+	var distance = closest_stop[0];
+	var name = closest_stop[1];
+	
+	mycontent = "Closest station from you is: " + name + " which is " + distance + " miles away.";
 	
 	var myInfo = new google.maps.InfoWindow({
 		content: mycontent
@@ -128,6 +135,7 @@ function paths(){
 function find_distance(lat1, lon1){
 	var dis = 100;
 	var temp;
+	var station = new Object;
 	
 	for(i = 0; i < num_stops; i++) {
 		lat2 = stations_all[i].lat();
@@ -136,10 +144,11 @@ function find_distance(lat1, lon1){
 		
 		if (temp < dis){
 			dis = temp;
+			station = i;
 			}
 		}
 			
-	return dis;
+	return closest[dis,station];
 }
 function haversine(lat1, lon1, lat2, lon2){
 
