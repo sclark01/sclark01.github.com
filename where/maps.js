@@ -1,12 +1,9 @@
-var map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-
 function run() {
-	
-        draw_map();
-        get_location(map);
+       var mymap = draw_map();
+       get_location(mymap);
 
 }
+
 function draw_map(){
 	var mapOptions = {
           center: new google.maps.LatLng(42.317939,-71.081543),
@@ -15,18 +12,28 @@ function draw_map(){
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
+            
+    return map;
 }
-function get_location(){
+
+function get_location(mymap){
 	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(showPosition, map);
+		navigator.geolocation.getCurrentPosition(showPosition);
 		}
 	else {
 		alert("GeoLocation is Not Enabled on this device");
 	}
 }
 
-function showPosition(position, map){
+function showPosition(position){
+	var popOptions = {
+		
+	}
 	var pop_up = new google.maps.InfoWindow({content: "HEY"});
-	pop_up.open(map,position);
+	var marker = new google.maps.Marker({position: position, map: mymap, title: "Hello World"});
+
+	google.maps.event.addlistener(marker, 'click', function(){
+	infowindow.open(mymap, marker)
+});
 	
 }
