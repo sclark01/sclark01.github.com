@@ -20,7 +20,6 @@ function run() {
 
 	   draw_map();  
        get_location();
-       find_friends();
 
 }
 
@@ -57,6 +56,7 @@ function showPosition(position){
 	var distance = closest_stop[0];
 	var name = closest_stop[1];
 	draw_closest(myLat, myLon, name);
+	find_friends();
 	name = stop_names[1];
 	
 	
@@ -229,7 +229,7 @@ function find_friends() {
 
 function WC_location(place){
 	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
-	
+	dist = haversine(myLat, myLon, place.loc.latitude, place.loc.longitude);
 	var message = "Congrats! You found " + place.name + " at " + place.loc.note;
 	
 	var theirInfo = new google.maps.InfoWindow({
