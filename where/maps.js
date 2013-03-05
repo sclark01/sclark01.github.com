@@ -259,7 +259,7 @@ function WC_location(place){
 function distance_WC(theirlat, theirlon){
 	
 	dist = haversine(myLat, myLon, theirlat, theirlon);
-	
+	console.log(myLat, myLon, theirlat, theirlon);
 	return dist;
 
 }
