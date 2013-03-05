@@ -210,18 +210,46 @@ function parse(){
 			parsed = JSON.parse(str);
 			count = parsed.length;
 			for (i = 0; i < count; i++){
-				job_desc(parsed[i]);
+				WC_location(parsed[i]);
 			}
 			return;
 			}
 	}
 }
 
-
 function find_friends() {
 		request_WC.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
 		request_WC.send(null);
 		request_WC.onreadystatechange = parse;
+}
+
+function WC_location(place){
+	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
+	
+	var message = "Congrats! You found " + place.name + " at " + place.loc.note;
+	
+	var theirInfo = new google.maps.InfoWindow({
+		content: message
+	});
+	if (place.name == "Waldo"){
+		img = 'images/waldo.png';
+	}
+	else {
+		img = 'images/carmen.png';
+	}
+	var markerWC = new google.maps.Marker({
+				animation: google.maps.Animation.BOUNCE,
+				position: theirLatLng,
+				map: map,
+				title: "",
+				icon: img
+				});
+
+	google.maps.event.addListener(markerWC, 'click', function(event){
+		theirInfo.open(map, markerWC);
+	});
+
+	
 }
 
 function station_coordinates(){
