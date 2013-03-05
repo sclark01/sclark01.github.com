@@ -57,7 +57,7 @@ function showPosition(position){
 	var name = closest_stop[1];
 	draw_closest(myLat, myLon, name);
 	find_friends();
-	name = stop_names[1];
+	name = stop_names[1].name;
 	
 	
 	mycontent = "Closest station from you is " + name + ", which is " + distance + " miles away.";
@@ -110,7 +110,7 @@ function draw_station(){
 
 	
 	for (i = 0; i < num_stops; i++){
-			var name = stop_names[i];
+			var name = stop_names[i].name;
 			
 			
 			stop_all[i] = new google.maps.Marker({
@@ -260,8 +260,8 @@ function WC_location(place){
 }
 
 function station_coordinates(){
-	stations_all[0] = new google.maps.LatLng(42.395382,-71.142633);
-	stations_all[1] = new google.maps.LatLng(42.396967,-71.122935);
+	stations_all[0] = new google.maps.LatLng(42.395428,-71.142483);
+	stations_all[1] = new google.maps.LatLng(42.39674,-71.121815);
 	stations_all[2] = new google.maps.LatLng(42.388441,-71.119266);
 	stations_all[3] = new google.maps.LatLng(42.373534,-71.118976);
 	stations_all[4] = new google.maps.LatLng(42.36552,-71.104116);
@@ -298,28 +298,28 @@ function station_coordinates(){
 }
 
 function names(){
-	stop_names[0] = 'Alewife';
-	stop_names[1] = 'Davis';
-	stop_names[2] = 'Porter';
-	stop_names[3] = 'Harvard';
-	stop_names[4] = 'Central';
-	stop_names[5] = 'Kendal/MIT';
-	stop_names[6] = 'Charles/MGH';
-	stop_names[7] = 'Park Street';
-	stop_names[8] = 'Downtown Crossing';
-	stop_names[9] = 'South Station';
-	stop_names[10] = 'Broadway';
-	stop_names[11] = 'Andrew';
-	stop_names[12] = 'JFK/UMass';
-	stop_names[13] = 'Salvin Hill';
-	stop_names[14] = 'Fields Corner';
-	stop_names[15] = 'Shawmut';
-	stop_names[16] = 'Ashmont';
-	stop_names[17] = 'North Quincy';
-	stop_names[18] = 'Wollaston';
-	stop_names[19] = 'Quincy Center';
-	stop_names[20] = 'Quincy Adams';
-	stop_names[21] = 'Braintree';
+	stop_names[0] = {name: 'Alewife' idN: idS: };
+	stop_names[1] = {name: 'Davis' idN: idS: };
+	stop_names[2] = {name: 'Porter' idN: idS: };
+	stop_names[3] = {name: 'Harvard' idN: idS: };
+	stop_names[4] = {name: 'Central' idN: idS: };
+	stop_names[5] = {name: 'Kendal/MIT' idN: idS: };
+	stop_names[6] = {name: 'Charles/MGH' idN: idS: };
+	stop_names[7] = {name: 'Park Street' idN: idS: };
+	stop_names[8] = {name: 'Downtown Crossing' idN: idS: };
+	stop_names[9] = {name: 'South Station' idN: idS: };
+	stop_names[10] = {name: 'Broadway' idN: idS: };
+	stop_names[11] = {name: 'Andrew' idN: idS: };
+	stop_names[12] = {name: 'JFK/UMass' idN: idS: };
+	stop_names[13] = {name: 'Salvin Hill' idN: idS: };
+	stop_names[14] = {name: 'Fields Corner' idN: idS: };
+	stop_names[15] = {name: 'Shawmut' idN: idS: };
+	stop_names[16] = {name: 'Ashmont' idN: idS: };
+	stop_names[17] = {name: 'North Quincy' idN: idS: };
+	stop_names[18] = {name: 'Wollaston' idN: idS: };
+	stop_names[19] = {name: 'Quincy Center' idN: idS: };
+	stop_names[20] = {name: 'Quincy Adams' idN: idS: };
+	stop_names[21] = {name: 'Braintree' idN: idS: };
 }
 
 
