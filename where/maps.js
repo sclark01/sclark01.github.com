@@ -215,6 +215,7 @@ function parse(){
 			return;
 			}
 	}
+}
 
 
 function find_friends() {
