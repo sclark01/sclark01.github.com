@@ -118,14 +118,15 @@ function draw_station(){
 			event_listener(name, stop_all[i]);
 				
 	for (j = 0; j < ash_stops; j++){
+		name = stop_names[i++];
 		stop_ash[j] = new google.maps.Marker({
 			animation: google.maps.Animation.DROP,
 			position: stations_ash[j],
 			map: map,
-			title: stop_names[i++],
+			title: stop_names[i],
 			icon: t_logo
 			});
-		//event_listener(, )
+		event_listener(name, stop_ash[j]);
 		}
 	for (w = 0; w < brn_stops; w++){
 		stop_brn[j] = new google.maps.Marker({
