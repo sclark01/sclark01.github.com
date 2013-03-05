@@ -103,7 +103,10 @@ function draw_closest(lat1, lon1, stop){
 function draw_station(){
 	station_coordinates();
 	names();
-	
+	get_times();
+}
+
+function build_marker(stop_stat, count_stat) {	
 	var stop_all = [];
 	var stop_ash = [];
 	var stop_brn = [];
@@ -124,25 +127,29 @@ function draw_station(){
 				icon: t_logo
 				});
 			
-			event_listener(name, stop_all[i], i); 
+			event_listener(name, stop_all[i], i, stop_stat, count_stat); 
 									
 		}
 
 	paths();
 }
 
-function event_listener(name, marker, stop) { 
-	var info = new google.maps.InfoWindow({
-		content: name
-	});
-	get_times();
-	for (i = 0; i < count_stat; i++){
-		for( j = 0; j < num_stops; j++) {
-			if(parsed_stat[i].PlatformKey == stop_names[j].idN) {
-			console.log("WORKS");
-			}
-		}
+function event_listener(name, marker, stop, num_data) { 
+
+var info = name + ": ";
+
+for (j = 0; j < num_data; j++) {
+	if(stop_stat[j].PlatformKey == stop_names[stop].idN){
+		info = info + "Northbound Arrives at " + stop_stat[j].Time;
 	}
+	if(stop_stat[j].PlatformKey == stop_names[stop].idS){
+		info = info + "Southbound Arrives at " + stop_stat[j].Time;
+}
+
+	var info = new google.maps.InfoWindow({
+		content: info
+	});
+
 	google.maps.event.addListener(marker, 'click', function(event){
 		info.open(map, marker);
 	});
@@ -161,9 +168,8 @@ function parse_stat(){
 			str_stat = request_stat.responseText;
 			parsed_stat = JSON.parse(str_stat);
 			count_stat = parsed_stat.length;
-			//for (i = 0; i < count; i++){
-			//	WC_location(parsed[i]);
-			//}
+			build_marker(parsed_stat, count_stat);
+			
 			return;
 			}
 	}
