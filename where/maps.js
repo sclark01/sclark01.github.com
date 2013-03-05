@@ -142,7 +142,7 @@ function draw_station(){
 
 function event_listener(name, marker) {
 	var info = new google.maps.InfoWindow({
-		content: name;
+		content: name
 	});
 	
 	google.maps.event.addListener(marker, 'click', function(event){
