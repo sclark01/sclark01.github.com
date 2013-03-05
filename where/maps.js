@@ -38,7 +38,6 @@ function draw_map() {
 
 function get_location(){
 	if (navigator.geolocation){
-		console.log("here");
 		navigator.geolocation.getCurrentPosition(showPosition);
 		}
 	else {
@@ -47,9 +46,9 @@ function get_location(){
 }
 
 function showPosition(position){
-
-	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	
+	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	console.log("here");
 	myLat = position.coords.latitude;
 	myLon = position.coords.longitude;
 	
