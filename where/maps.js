@@ -10,6 +10,7 @@ var stops_b4_branch = 13;
 var ash_stops = 5;
 var brn_stops = 6;
 var request_WC = new XMLHttpRequest();
+var position;
 
 
 function run() {
@@ -182,6 +183,7 @@ function find_distance(lat1, lon1){
 			
 	return [dis,station];
 }
+
 function haversine(lat1, lon1, lat2, lon2){
 
 Number.prototype.toRad = function() {
@@ -224,8 +226,9 @@ function find_friends() {
 
 function WC_location(place){
 	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
+	dist = distance_WC(place.loc.latitude, place.loc.longitude);
 	
-	var message = "Congrats! You found " + place.name + " at " + place.loc.note;
+	var message = "Congrats! You found " + place.name + " at " + place.loc.note + " which is " + dist + " miles away!";
 	
 	var theirInfo = new google.maps.InfoWindow({
 		content: message
@@ -249,10 +252,19 @@ function WC_location(place){
 	google.maps.event.addListener(markerWC, 'click', function(event){
 		theirInfo.open(map, markerWC);
 	});
-
-
-	
 }
+
+function distance_WC(theirlat, theirlon){
+
+	mylat = position.coords.latitude;
+	mylon = position.coords.longitude;
+	
+	dist = haversine(mylat, mylon, theirlat, theirlon);
+	
+	return dist;
+
+}
+
 
 function station_coordinates(){
 	stations_all[0] = new google.maps.LatLng(42.395382,-71.142633);
