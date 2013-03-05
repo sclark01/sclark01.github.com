@@ -245,9 +245,8 @@ function WC_location(place){
 				icon: img
 				});
 
-	google.maps.event.addListener(markerWC, 'click', function(event){
-		theirInfo.open(map, markerWC);
-	});
+	theirInfo.open(map, markerWC);
+
 
 	
 }
