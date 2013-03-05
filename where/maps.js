@@ -113,10 +113,10 @@ function draw_station(){
 				title: "",
 				icon: t_logo
 				});
-			google.maps.event.addListener(stop_all[i], 'click', function(){
+			google.maps.event.addListener(stop_all[i], 'click', function(event){
 				station_info[i].open(map, stop_all[i];
-			});
-		
+			});	
+				
 	for (j = 0; j < ash_stops; j++){
 		stop_ash[j] = new google.maps.Marker({
 			animation: google.maps.Animation.DROP,
