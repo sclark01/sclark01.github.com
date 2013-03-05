@@ -137,7 +137,7 @@ function build_marker(stop_stat, count_stat) {
 function event_listener(name, marker, stop, num_data) { 
 
 var info = name + ": ";
-console.log(
+console.log(num_data);
 	for(j = 0; j < num_data; j++) {
 		console.log("here");
 		if(stop[j].PlatformKey == stop_names[stop].idN){
