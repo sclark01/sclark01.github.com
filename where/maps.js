@@ -140,10 +140,10 @@ var info = name + ": ";
 	for(j = 0; j < num_data; j++) {
 		console.log("here");
 		if(status[j].PlatformKey == stop_names[stop].idN){
-			info = info + "Northbound Arrives at " + status[j].Time;
+			info = info + "Northbound Arrives at " + status[j].Time + "\n";
 		}	
 		if(status[j].PlatformKey == stop_names[stop].idS){
-			info = info + "Southbound Arrives at " + status[j].Time;
+			info = info + "Southbound Arrives at " + status[j].Time + "\n";
 		}
 	}
 
