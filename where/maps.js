@@ -51,7 +51,7 @@ function showPosition(position){
 	
 	myLat = position.coords.latitude;
 	myLon = position.coords.longitude;
-	
+	console.log(myLat,myLon);
 	var closest_stop = find_distance(myLat, myLon);
 	var distance = closest_stop[0];
 	var name = closest_stop[1];
