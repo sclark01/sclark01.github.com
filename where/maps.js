@@ -138,8 +138,8 @@ function event_listener(name, marker, stop, num_data) {
 
 var info = name + ": ";
 
-	for (j = 0; j < num_data; j++) {
-		console.log("here");
+	for(j = 0; j < num_data; j++) {
+		
 		if(stop_stat[j].PlatformKey == stop_names[stop].idN){
 			info = info + "Northbound Arrives at " + stop_stat[j].Time;
 		}	
