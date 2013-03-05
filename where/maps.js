@@ -137,14 +137,14 @@ function build_marker(stop_stat, count_stat) {
 function event_listener(name, marker, stop, num_data) { 
 
 var info = name + ": ";
-
+console.log(
 	for(j = 0; j < num_data; j++) {
 		console.log("here");
-		if(stop_stat[j].PlatformKey == stop_names[stop].idN){
-			info = info + "Northbound Arrives at " + stop_stat[j].Time;
+		if(stop[j].PlatformKey == stop_names[stop].idN){
+			info = info + "Northbound Arrives at " + stop[j].Time;
 		}	
-		if(stop_stat[j].PlatformKey == stop_names[stop].idS){
-			info = info + "Southbound Arrives at " + stop_stat[j].Time;
+		if(stop[j].PlatformKey == stop_names[stop].idS){
+			info = info + "Southbound Arrives at " + stop[j].Time;
 		}
 	}
 
