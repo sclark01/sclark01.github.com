@@ -97,11 +97,15 @@ function draw_station(){
 	var stop_all = [];
 	var stop_ash = [];
 	var stop_brn = [];
+	var station_info = [];
 
 	t_logo = 'images/tlogo.png';
 
 	
 	for (i = 0; i < stops_b4_branch; i++){
+				station_info[i] = new google.maps.InfoWindow({
+				content: stop_names[i];
+			});
 			stop_all[i] = new google.maps.Marker({
 				animation: google.maps.Animation.DROP,
 				position: stations_all[i],
@@ -109,6 +113,9 @@ function draw_station(){
 				title: "",
 				icon: t_logo
 				});
+			google.maps.event.addListener(stop_all[i], 'click', function(){
+				station_info[i].open(map, stop_all[i];
+			});
 		
 	for (j = 0; j < ash_stops; j++){
 		stop_ash[j] = new google.maps.Marker({
