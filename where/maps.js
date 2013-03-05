@@ -339,7 +339,7 @@ function station_coordinates(){
 }
 
 function names(){
-	stop_names[0] = {name: 'Alewife', idN: 'RALEN', idS:'RALEN' };
+	stop_names[0] = {name: 'Alewife', idN: 'RALEN', idS:'' };
 	stop_names[1] = {name: 'Davis', idN: 'RDAVN', idS:'RDAVS' };
 	stop_names[2] = {name: 'Porter', idN: 'RPORN', idS:'RPORS' };
 	stop_names[3] = {name: 'Harvard', idN: 'RHARN', idS:'RHARS' };
@@ -355,12 +355,12 @@ function names(){
 	stop_names[13] = {name: 'Salvin Hill', idN: 'RSAVN', idS:'RSAVS' };
 	stop_names[14] = {name: 'Fields Corner',idN: 'RFIEN', idS:'RFIES' };
 	stop_names[15] = {name: 'Shawmut', idN: 'RSHAN', idS:'RSHAS' };
-	stop_names[16] = {name: 'Ashmont', idN: 'RASHS', idS:'RASHS' };
+	stop_names[16] = {name: 'Ashmont', idN: '', idS:'RASHS' };
 	stop_names[17] = {name: 'North Quincy', idN: 'RNQUN', idS:'RNQUS' };
 	stop_names[18] = {name: 'Wollaston', idN: 'RWOLN', idS:'RWOLS' };
 	stop_names[19] = {name: 'Quincy Center', idN: 'RQUCN', idS:'RQUCS' };
 	stop_names[20] = {name: 'Quincy Adams', idN: 'RQUAN', idS:'RQUAS' };
-	stop_names[21] = {name: 'Braintree',idN: 'RBRAS', idS:'RBRAS' };
+	stop_names[21] = {name: 'Braintree',idN: '', idS:'RBRAS' };
 }
 
 
