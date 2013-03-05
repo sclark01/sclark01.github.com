@@ -67,6 +67,10 @@ function showPosition(position){
 	
 
 	myInfo.open(map, marker);	
+	
+	google.maps.event.addListener(marker, 'click', function(event){
+		myInfo.open(map, marker);
+	});
 }
 
 function draw_closest(lat1, lon1, stop){
