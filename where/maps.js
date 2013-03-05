@@ -140,10 +140,10 @@ var info = name + ": ";
 	for(j = 0; j < num_data; j++) {
 		
 		if(status[j].PlatformKey == stop_names[stop].idN){
-			info = info + "Northbound Arrives at " + status[j].Time + "<br>";
+			info = info + "Northbound Arrives on " + status[j].Time + "<br>";
 		}	
 		if(status[j].PlatformKey == stop_names[stop].idS){
-			info = info + "Southbound Arrives at " + status[j].Time + "\n";
+			info = info + "Southbound Arrives on " + status[j].Time + "<br>";
 		}
 	}
 
