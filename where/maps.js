@@ -298,28 +298,28 @@ function station_coordinates(){
 }
 
 function names(){
-	stop_names[0] = {name: 'Alewife', idN:, idS: };
-	stop_names[1] = {name: 'Davis', idN:, idS: };
-	stop_names[2] = {name: 'Porter', idN:, idS: };
-	stop_names[3] = {name: 'Harvard', idN:, idS: };
-	stop_names[4] = {name: 'Central', idN:, idS: };
-	stop_names[5] = {name: 'Kendal/MIT', idN:, idS: };
-	stop_names[6] = {name: 'Charles/MGH', idN:, idS: };
-	stop_names[7] = {name: 'Park Street', idN:, idS: };
-	stop_names[8] = {name: 'Downtown Crossing', idN:, idS: };
-	stop_names[9] = {name: 'South Station', idN:, idS: };
-	stop_names[10] = {name: 'Broadway', idN:, idS: };
-	stop_names[11] = {name: 'Andrew', idN:, idS: };
-	stop_names[12] = {name: 'JFK/UMass', idN:, idS: };
-	stop_names[13] = {name: 'Salvin Hill', idN:, idS: };
-	stop_names[14] = {name: 'Fields Corner', idN:, idS: };
-	stop_names[15] = {name: 'Shawmut', idN:, idS: };
-	stop_names[16] = {name: 'Ashmont', idN:, idS: };
-	stop_names[17] = {name: 'North Quincy', idN:, idS: };
-	stop_names[18] = {name: 'Wollaston', idN:, idS: };
-	stop_names[19] = {name: 'Quincy Center', idN:, idS: };
-	stop_names[20] = {name: 'Quincy Adams', idN:, idS: };
-	stop_names[21] = {name: 'Braintree', idN:, idS: };
+	stop_names[0] = {name: 'Alewife', idN: '123', idS:'321' };
+	stop_names[1] = {name: 'Davis', idN: '123', idS:'321' };
+	stop_names[2] = {name: 'Porter', idN: '123', idS:'321' };
+	stop_names[3] = {name: 'Harvard', idN: '123', idS:'321' };
+	stop_names[4] = {name: 'Central', idN: '123', idS:'321' };
+	stop_names[5] = {name: 'Kendal/MIT', idN: '123', idS:'321' };
+	stop_names[6] = {name: 'Charles/MGH', idN: '123', idS:'321' };
+	stop_names[7] = {name: 'Park Street', idN: '123', idS:'321' };
+	stop_names[8] = {name: 'Downtown Crossing', idN: '123', idS:'321' };
+	stop_names[9] = {name: 'South Station', idN: '123', idS:'321' };
+	stop_names[10] = {name: 'Broadway', idN: '123', idS:'321' };
+	stop_names[11] = {name: 'Andrew', idN: '123', idS:'321' };
+	stop_names[12] = {name: 'JFK/UMass', idN: '123', idS:'321' };
+	stop_names[13] = {name: 'Salvin Hill', idN: '123', idS:'321' };
+	stop_names[14] = {name: 'Fields Corner',idN: '123', idS:'321' };
+	stop_names[15] = {name: 'Shawmut', idN: '123', idS:'321' };
+	stop_names[16] = {name: 'Ashmont', idN: '123', idS:'321' };
+	stop_names[17] = {name: 'North Quincy', idN: '123', idS:'321' };
+	stop_names[18] = {name: 'Wollaston', idN: '123', idS:'321' };
+	stop_names[19] = {name: 'Quincy Center', idN: '123', idS:'321' };
+	stop_names[20] = {name: 'Quincy Adams', idN: '123', idS:'321' };
+	stop_names[21] = {name: 'Braintree',idN: '123', idS:'321' };
 }
 
 
