@@ -46,9 +46,9 @@ function get_location(){
 }
 
 function showPosition(position){
-	
-	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	console.log("here");
+	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	
 	myLat = position.coords.latitude;
 	myLon = position.coords.longitude;
 	
