@@ -117,32 +117,8 @@ function draw_station(){
 				});
 			
 			event_listener(name, stop_all[i]);
-			}
-/*				
-	for (j = 0; j < ash_stops; j++){
-		var y = stops_b4_branch - 1;
-		name = stop_names[y++];
-		stop_ash[j] = new google.maps.Marker({
-			animation: google.maps.Animation.DROP,
-			position: stations_ash[j],
-			map: map,
-			title: "",
-			icon: t_logo
-			});
-		
-		event_listener(name, stop_ash[j]);
 		}
-	for (w = 0; w < brn_stops; w++){
-		stop_brn[j] = new google.maps.Marker({
-			animation: google.maps.Animation.DROP,
-			position: stations_brn[w],
-			map: map,
-			title: "",
-			icon: t_logo
-			});
-		}
-		y++;			
-	} */
+
 	paths();
 }
 
