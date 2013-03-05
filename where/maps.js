@@ -13,7 +13,7 @@ var request_WC = new XMLHttpRequest();
 var position;
 var myLat;
 var myLon;
-var my_coors = [];
+
 
 
 function run() {
@@ -52,9 +52,6 @@ function showPosition(position){
 	
 	myLat = position.coords.latitude;
 	myLon = position.coords.longitude;
-	
-	my_coors[0] = myLat;
-	my_coors[1] = myLon;
 	
 	var closest_stop = find_distance(myLat, myLon);
 	var distance = closest_stop[0];
@@ -98,6 +95,8 @@ function draw_closest(lat1, lon1, stop){
 	});
 	
 	closest_route.setMap(map);
+	
+	myLat = lat1;
 }
 
 function draw_station(){
@@ -233,7 +232,7 @@ function find_friends() {
 function WC_location(place){
 	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
 	//dist = distance_WC(place.loc.latitude, place.loc.longitude);
-	console.log(my_coors[0], my_coors[1]);
+	console.log(myLat);
 	var message = "Congrats! You found " + place.name + " at " + place.loc.note;// + " which is " + dist + " miles away!";
 	
 	var theirInfo = new google.maps.InfoWindow({
