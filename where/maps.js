@@ -105,7 +105,8 @@ function draw_station(){
 				position: stations_all[i],
 				map: map,
 				title: "",
-				icon: t_logo
+				icon: t_logo,
+				animation: google.maps.Animation.DROP
 				});
 		
 	for (j = 0; j < ash_stops; j++){
@@ -114,6 +115,7 @@ function draw_station(){
 			map: map,
 			title: "",
 			icon: t_logo
+			animation: google.maps.Animation.DROP
 			});
 		}
 	for (w = 0; w < brn_stops; w++){
@@ -122,6 +124,7 @@ function draw_station(){
 			map: map,
 			title: "",
 			icon: t_logo
+			animation: google.maps.Animation.DROP
 			});
 		}
 					
