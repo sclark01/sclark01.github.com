@@ -38,6 +38,7 @@ function draw_map() {
 
 function get_location(){
 	if (navigator.geolocation){
+		console.log("here");
 		navigator.geolocation.getCurrentPosition(showPosition);
 		}
 	else {
@@ -51,7 +52,7 @@ function showPosition(position){
 	
 	myLat = position.coords.latitude;
 	myLon = position.coords.longitude;
-	console.log("here");
+	
 	var closest_stop = find_distance(myLat, myLon);
 	var distance = closest_stop[0];
 	var name = closest_stop[1];
