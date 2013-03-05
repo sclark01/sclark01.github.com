@@ -135,7 +135,7 @@ function build_marker(stop_stat, count_stat) {
 
 function event_listener(name, marker, stop, status, num_data) { 
 
-var info = name + ": ";
+var info = name + ": <br>";
 
 	for(j = 0; j < num_data; j++) {
 		
