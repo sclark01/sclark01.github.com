@@ -258,9 +258,16 @@ function WC_location(place){
 
 function WC_dist(theirlat, theirlon){
 	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(myPosition);
+		console.log(navigator.geolocation.getCurrentPosition(myPositionWC));
 		}
-	console.log(myPosition.coords.latitude);
+}
+
+function myPositionWC(position) {
+	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	
+	theirLat = position.coords.latitude;
+	theirLon = position.coords.longitude;
+	
 }
 
 function station_coordinates(){
