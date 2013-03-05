@@ -63,7 +63,6 @@ function showPosition(position){
 	});
 	
 	var marker = new google.maps.Marker({
-		animation: google.maps.Animation.BOUNCE,
 		position: myLatLng,
 		map: map,
 		title: "Current Location"
