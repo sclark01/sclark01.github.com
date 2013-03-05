@@ -51,7 +51,7 @@ function showPosition(position){
 	
 	myLat = position.coords.latitude;
 	myLon = position.coords.longitude;
-	
+	console.log("here");
 	var closest_stop = find_distance(myLat, myLon);
 	var distance = closest_stop[0];
 	var name = closest_stop[1];
@@ -213,7 +213,6 @@ function parse(){
 			str = request_WC.responseText;
 			parsed = JSON.parse(str);
 			count = parsed.length;
-			console.log(count);
 			for (i = 0; i < count; i++){
 				WC_location(parsed[i]);
 			}
