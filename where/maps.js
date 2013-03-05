@@ -111,7 +111,7 @@ function draw_station(){
 				animation: google.maps.Animation.DROP,
 				position: stations_all[i],
 				map: map,
-				title: "",
+				title: stop_names[i],
 				icon: t_logo
 				});
 			
@@ -122,16 +122,17 @@ function draw_station(){
 			animation: google.maps.Animation.DROP,
 			position: stations_ash[j],
 			map: map,
-			title: "",
+			title: stop_names[i++],
 			icon: t_logo
 			});
+		//event_listener(, )
 		}
 	for (w = 0; w < brn_stops; w++){
 		stop_brn[j] = new google.maps.Marker({
 			animation: google.maps.Animation.DROP,
 			position: stations_brn[w],
 			map: map,
-			title: "",
+			title: stop_names[i],
 			icon: t_logo
 			});
 		}
