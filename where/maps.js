@@ -140,7 +140,7 @@ function draw_station(){
 	paths();
 }
 
-event_listener(name, marker) {
+function event_listener(name, marker) {
 	var info = new google.maps.InfoWindow({
 		content: name;
 	});
