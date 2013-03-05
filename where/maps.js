@@ -59,6 +59,7 @@ function showPosition(position){
 	});
 	
 	var marker = new google.maps.Marker({
+		animation: google.maps.Animation.BOUNCE,
 		position: myLatLng,
 		map: map,
 		title: "Current Location"
@@ -102,7 +103,7 @@ function draw_station(){
 	
 	for (i = 0; i < stops_b4_branch; i++){
 			stop_all[i] = new google.maps.Marker({
-				animation: google.maps.Animation.BOUNCE,
+				animation: google.maps.Animation.DROP,
 				position: stations_all[i],
 				map: map,
 				title: "",
@@ -111,7 +112,7 @@ function draw_station(){
 		
 	for (j = 0; j < ash_stops; j++){
 		stop_ash[j] = new google.maps.Marker({
-			animation: google.maps.Animation.BOUNCE,
+			animation: google.maps.Animation.DROP,
 			position: stations_ash[j],
 			map: map,
 			title: "",
@@ -120,7 +121,7 @@ function draw_station(){
 		}
 	for (w = 0; w < brn_stops; w++){
 		stop_brn[j] = new google.maps.Marker({
-			animation: google.maps.Animation.BOUNCE,
+			animation: google.maps.Animation.DROP,
 			position: stations_brn[w],
 			map: map,
 			title: "",
