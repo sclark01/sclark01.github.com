@@ -172,7 +172,7 @@ function parse_stat(){
 			str_stat = request_stat.responseText;
 			parsed_stat = JSON.parse(str_stat);
 			count_stat = parsed_stat.length;
-			console.log(count_stat);
+			console.log(parsed_stat);
 			build_marker(parsed_stat, count_stat);
 			
 			return;
