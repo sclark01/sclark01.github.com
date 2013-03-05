@@ -11,6 +11,8 @@ var ash_stops = 5;
 var brn_stops = 6;
 var request_WC = new XMLHttpRequest();
 var position;
+var myLat;
+var myLon;
 
 
 function run() {
@@ -47,13 +49,13 @@ function showPosition(position){
 
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	
-	lat1 = position.coords.latitude;
-	lon1 = position.coords.longitude;
+	myLat = position.coords.latitude;
+	myLon = position.coords.longitude;
 	
-	var closest_stop = find_distance(lat1, lon1);
+	var closest_stop = find_distance(myLat, myLon);
 	var distance = closest_stop[0];
 	var name = closest_stop[1];
-	draw_closest(lat1, lon1, name);
+	draw_closest(myLat, myLon, name);
 	name = stop_names[1];
 	
 	
@@ -255,11 +257,8 @@ function WC_location(place){
 }
 
 function distance_WC(theirlat, theirlon){
-
-	mylat = position.coords.latitude;
-	mylon = position.coords.longitude;
 	
-	dist = haversine(mylat, mylon, theirlat, theirlon);
+	dist = haversine(myLat, myLon, theirlat, theirlon);
 	
 	return dist;
 
