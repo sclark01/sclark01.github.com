@@ -102,29 +102,29 @@ function draw_station(){
 	
 	for (i = 0; i < stops_b4_branch; i++){
 			stop_all[i] = new google.maps.Marker({
+				animation: google.maps.Animation.DROP,
 				position: stations_all[i],
 				map: map,
 				title: "",
-				icon: t_logo,
-				animation: google.maps.Animation.DROP
+				icon: t_logo
 				});
 		
 	for (j = 0; j < ash_stops; j++){
 		stop_ash[j] = new google.maps.Marker({
+			animation: google.maps.Animation.DROP,
 			position: stations_ash[j],
 			map: map,
 			title: "",
 			icon: t_logo
-			animation: google.maps.Animation.DROP
 			});
 		}
 	for (w = 0; w < brn_stops; w++){
 		stop_brn[j] = new google.maps.Marker({
+			animation: google.maps.Animation.DROP,
 			position: stations_brn[w],
 			map: map,
 			title: "",
 			icon: t_logo
-			animation: google.maps.Animation.DROP
 			});
 		}
 					
