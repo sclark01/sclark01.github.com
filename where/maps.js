@@ -113,11 +113,10 @@ function build_marker(stop_stat, count_stat) {
 	
 
 	t_logo = 'images/tlogo.png';
-	console.log(stop_stat);
+	
 	
 	for (i = 0; i < num_stops; i++){
 			var name = stop_names[i].name;
-			
 			
 			stop_all[i] = new google.maps.Marker({
 				animation: google.maps.Animation.DROP,
@@ -134,17 +133,17 @@ function build_marker(stop_stat, count_stat) {
 	paths();
 }
 
-function event_listener(name, marker, stop, num_data) { 
+function event_listener(name, marker, stop, status, num_data) { 
 
 var info = name + ": ";
 
 	for(j = 0; j < num_data; j++) {
 		console.log("here");
-		if(stop[j].PlatformKey == stop_names[stop].idN){
-			info = info + "Northbound Arrives at " + stop[j].Time;
+		if(status[j].PlatformKey == stop_names[stop].idN){
+			info = info + "Northbound Arrives at " + status[j].Time;
 		}	
-		if(stop[j].PlatformKey == stop_names[stop].idS){
-			info = info + "Southbound Arrives at " + stop[j].Time;
+		if(status[j].PlatformKey == stop_names[stop].idS){
+			info = info + "Southbound Arrives at " + status[j].Time;
 		}
 	}
 
