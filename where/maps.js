@@ -10,9 +10,12 @@ var stops_b4_branch = 13;
 var ash_stops = 5;
 var brn_stops = 6;
 var request_WC = new XMLHttpRequest();
+var request_stat = new XMLHttpRequest();
 var position;
 var myLat;
 var myLon;
+var parsed_stat;
+var count_stat;
 
 
 
@@ -121,23 +124,50 @@ function draw_station(){
 				icon: t_logo
 				});
 			
-			event_listener(name, stop_all[i]); //i should also pass i to ID the station 
-											// or perhaps make another parallel array to contain MBTA ID codes 
+			event_listener(name, stop_all[i], i); 
+									
 		}
 
 	paths();
 }
 
-function event_listener(name, marker) { 
+function event_listener(name, marker, stop) { 
 	var info = new google.maps.InfoWindow({
 		content: name
 	});
-	//call function here that parses data
-	//it will then look through the object and if name == ID then set data in content
+	get_times();
+	for (i = 0; i < count_stat; i++){
+		for( j = 0; j < num_stops; j++) {
+			if(parsed_stat[i].PlatformKey == stop_names[j].idN) {
+			console.log("WORKS");
+			}
+		}
+	}
 	google.maps.event.addListener(marker, 'click', function(event){
 		info.open(map, marker);
 	});
 	
+}
+
+function get_times(){
+	request_stat.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
+	request_stat.send(null);
+	request_stat.onreadystatechange = parse_stat;
+}
+
+function parse_stat(){
+	if (request_stat.readyState == 4) {
+		if (request_stat.status == 200){
+			str_stat = request_stat.responseText;
+			parsed_stat = JSON.parse(str_stat);
+			count_stat = parsed_stat.length;
+			//for (i = 0; i < count; i++){
+			//	WC_location(parsed[i]);
+			//}
+			return;
+			}
+	}
+
 }
 
 function paths(){
@@ -208,7 +238,7 @@ Number.prototype.toRad = function() {
 	return d;
 }
 
-function parse(){
+function parse_WC(){
 
 	if (request_WC.readyState == 4) {
 		if (request_WC.status == 200){
@@ -226,7 +256,7 @@ function parse(){
 function find_friends() {
 		request_WC.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
 		request_WC.send(null);
-		request_WC.onreadystatechange = parse;
+		request_WC.onreadystatechange = parse_WC;
 }
 
 function WC_location(place){
@@ -298,28 +328,28 @@ function station_coordinates(){
 }
 
 function names(){
-	stop_names[0] = {name: 'Alewife', idN: '123', idS:'321' };
-	stop_names[1] = {name: 'Davis', idN: '123', idS:'321' };
-	stop_names[2] = {name: 'Porter', idN: '123', idS:'321' };
-	stop_names[3] = {name: 'Harvard', idN: '123', idS:'321' };
-	stop_names[4] = {name: 'Central', idN: '123', idS:'321' };
-	stop_names[5] = {name: 'Kendal/MIT', idN: '123', idS:'321' };
-	stop_names[6] = {name: 'Charles/MGH', idN: '123', idS:'321' };
-	stop_names[7] = {name: 'Park Street', idN: '123', idS:'321' };
-	stop_names[8] = {name: 'Downtown Crossing', idN: '123', idS:'321' };
-	stop_names[9] = {name: 'South Station', idN: '123', idS:'321' };
-	stop_names[10] = {name: 'Broadway', idN: '123', idS:'321' };
-	stop_names[11] = {name: 'Andrew', idN: '123', idS:'321' };
-	stop_names[12] = {name: 'JFK/UMass', idN: '123', idS:'321' };
-	stop_names[13] = {name: 'Salvin Hill', idN: '123', idS:'321' };
-	stop_names[14] = {name: 'Fields Corner',idN: '123', idS:'321' };
-	stop_names[15] = {name: 'Shawmut', idN: '123', idS:'321' };
-	stop_names[16] = {name: 'Ashmont', idN: '123', idS:'321' };
-	stop_names[17] = {name: 'North Quincy', idN: '123', idS:'321' };
-	stop_names[18] = {name: 'Wollaston', idN: '123', idS:'321' };
-	stop_names[19] = {name: 'Quincy Center', idN: '123', idS:'321' };
-	stop_names[20] = {name: 'Quincy Adams', idN: '123', idS:'321' };
-	stop_names[21] = {name: 'Braintree',idN: '123', idS:'321' };
+	stop_names[0] = {name: 'Alewife', idN: 'RALEN', idS:'RALEN' };
+	stop_names[1] = {name: 'Davis', idN: 'RDAVN', idS:'RDAVS' };
+	stop_names[2] = {name: 'Porter', idN: 'RPORN', idS:'RPORS' };
+	stop_names[3] = {name: 'Harvard', idN: 'RHARN', idS:'RHARS' };
+	stop_names[4] = {name: 'Central', idN: 'RCENN', idS:'RCENS' };
+	stop_names[5] = {name: 'Kendal/MIT', idN: 'RKENN', idS:'RKENS' };
+	stop_names[6] = {name: 'Charles/MGH', idN: 'RMGHN', idS:'RMGHS' };
+	stop_names[7] = {name: 'Park Street', idN: 'RPRKN', idS:'RPRKS' };
+	stop_names[8] = {name: 'Downtown Crossing', idN: 'RDTCN', idS:'RDTCS' };
+	stop_names[9] = {name: 'South Station', idN: 'RSOUN', idS:'RSOUS' };
+	stop_names[10] = {name: 'Broadway', idN: 'RBRON', idS:'RBROS' };
+	stop_names[11] = {name: 'Andrew', idN: 'RANDN', idS:'RANDS' };
+	stop_names[12] = {name: 'JFK/UMass', idN: 'RJFKN', idS:'RJFKS' };
+	stop_names[13] = {name: 'Salvin Hill', idN: 'RSAVN', idS:'RSAVS' };
+	stop_names[14] = {name: 'Fields Corner',idN: 'RFIEN', idS:'RFIES' };
+	stop_names[15] = {name: 'Shawmut', idN: 'RSHAN', idS:'RSHAS' };
+	stop_names[16] = {name: 'Ashmont', idN: 'RASHS', idS:'RASHS' };
+	stop_names[17] = {name: 'North Quincy', idN: 'RNQUN', idS:'RNQUS' };
+	stop_names[18] = {name: 'Wollaston', idN: 'RWOLN', idS:'RWOLS' };
+	stop_names[19] = {name: 'Quincy Center', idN: 'RQUCN', idS:'RQUCS' };
+	stop_names[20] = {name: 'Quincy Adams', idN: 'RQUAN', idS:'RQUAS' };
+	stop_names[21] = {name: 'Braintree',idN: 'RBRAS', idS:'RBRAS' };
 }
 
 
