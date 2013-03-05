@@ -9,12 +9,14 @@ var num_stops = 22;
 var stops_b4_branch = 13;
 var ash_stops = 5;
 var brn_stops = 6;
+var request_WC = new XMLHttpRequest();
 
 
 function run() {
 
 	   draw_map();  
        get_location();
+       find_friends();
 
 }
 
@@ -122,7 +124,7 @@ function draw_station(){
 	paths();
 }
 
-function event_listener(name, marker) {
+function event_listener(name, marker) { 
 	var info = new google.maps.InfoWindow({
 		content: name
 	});
@@ -198,6 +200,27 @@ Number.prototype.toRad = function() {
 	var d = R * c;
 
 	return d;
+}
+
+function parse(){
+
+	if (request_WC.readyState == 4) {
+		if (request_WC.status == 200){
+			str = request_WC.responseText;
+			parsed = JSON.parse(str);
+			count = parsed.length;
+			for (i = 0; i < count; i++){
+				job_desc(parsed[i]);
+			}
+			return;
+			}
+	}
+
+
+function find_friends() {
+		request_WC.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
+		request_WC.send(null);
+		request_WC.onreadystatechange = parse;
 }
 
 function station_coordinates(){
