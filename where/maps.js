@@ -106,10 +106,11 @@ function draw_station(){
 	
 	for (i = 0; i < stops_b4_branch; i++){
 			var name = stop_names[i];
-			console.log(name);
+			
 			station_info[i] = new google.maps.InfoWindow({
 				content: name
 			});
+			
 			stop_all[i] = new google.maps.Marker({
 				animation: google.maps.Animation.DROP,
 				position: stations_all[i],
