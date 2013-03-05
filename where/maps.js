@@ -38,7 +38,7 @@ function draw_map() {
 
 function get_location(){
 	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(showPosition);
+		navigator.geolocation.getCurrentPosition(showPosition); //sometimes this function doesn't run...
 		}
 	else {
 		alert("GeoLocation is not enabled on this device");
@@ -46,7 +46,7 @@ function get_location(){
 }
 
 function showPosition(position){
-	console.log("here");
+	
 	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	
 	myLat = position.coords.latitude;
@@ -121,7 +121,8 @@ function draw_station(){
 				icon: t_logo
 				});
 			
-			event_listener(name, stop_all[i]);
+			event_listener(name, stop_all[i]); //i should also pass i to ID the station 
+											// or perhaps make another parallel array to contain MBTA ID codes 
 		}
 
 	paths();
@@ -131,7 +132,8 @@ function event_listener(name, marker) {
 	var info = new google.maps.InfoWindow({
 		content: name
 	});
-	
+	//call function here that parses data
+	//it will then look through the object and if name == ID then set data in content
 	google.maps.event.addListener(marker, 'click', function(event){
 		info.open(map, marker);
 	});
