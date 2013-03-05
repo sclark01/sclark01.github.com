@@ -245,6 +245,10 @@ function WC_location(place){
 				});
 
 	theirInfo.open(map, markerWC);
+	
+	google.maps.event.addListener(markerWC, 'click', function(event){
+		theirInfo.open(map, markerWC);
+	});
 
 
 	
