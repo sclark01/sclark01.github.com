@@ -144,6 +144,7 @@ for (j = 0; j < num_data; j++) {
 	}
 	if(stop_stat[j].PlatformKey == stop_names[stop].idS){
 		info = info + "Southbound Arrives at " + stop_stat[j].Time;
+	}
 }
 
 	var info = new google.maps.InfoWindow({
@@ -153,8 +154,9 @@ for (j = 0; j < num_data; j++) {
 	google.maps.event.addListener(marker, 'click', function(event){
 		info.open(map, marker);
 	});
-	
 }
+
+
 
 function get_times(){
 	request_stat.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
