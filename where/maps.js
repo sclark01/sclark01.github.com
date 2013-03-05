@@ -104,7 +104,7 @@ function draw_station(){
 	
 	for (i = 0; i < stops_b4_branch; i++){
 	var name = stop_names[i];
-			station_info = new google.maps.InfoWindow({
+			station_info[i] = new google.maps.InfoWindow({
 				content: name
 			});
 			stop_all[i] = new google.maps.Marker({
@@ -115,7 +115,7 @@ function draw_station(){
 				icon: t_logo
 				});
 			google.maps.event.addListener(stop_all[i], 'click', function(event){
-				station_info.open(map, stop_all[i]);
+				station_info[i].open(map, stop_all[i]);
 			});
 				
 	for (j = 0; j < ash_stops; j++){
