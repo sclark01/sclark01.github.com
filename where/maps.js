@@ -213,6 +213,7 @@ function parse(){
 			str = request_WC.responseText;
 			parsed = JSON.parse(str);
 			count = parsed.length;
+			console.log(count);
 			for (i = 0; i < count; i++){
 				WC_location(parsed[i]);
 			}
