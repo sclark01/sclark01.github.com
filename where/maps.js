@@ -154,6 +154,7 @@ for (j = 0; j < num_data; j++) {
 	google.maps.event.addListener(marker, 'click', function(event){
 		info.open(map, marker);
 	});
+	
 }
 
 
@@ -208,6 +209,7 @@ function paths(){
 	route_ash.setMap(map);
 	route_brn.setMap(map);
 }
+
 function find_distance(lat1, lon1){
 	var dis = 100;
 	var temp;
