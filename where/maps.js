@@ -113,7 +113,7 @@ function build_marker(stop_stat, count_stat) {
 	
 
 	t_logo = 'images/tlogo.png';
-
+	console.log(stop_stat);
 	
 	for (i = 0; i < num_stops; i++){
 			var name = stop_names[i].name;
@@ -172,7 +172,7 @@ function parse_stat(){
 			str_stat = request_stat.responseText;
 			parsed_stat = JSON.parse(str_stat);
 			count_stat = parsed_stat.length;
-			console.log(parsed_stat);
+			
 			build_marker(parsed_stat, count_stat);
 			
 			return;
