@@ -119,8 +119,8 @@ function draw_station(){
 			event_listener(name, stop_all[i]);
 				
 	for (j = 0; j < ash_stops; j++){
-		var y = stops_b4_branch;
-		name = stop_names[y];
+		var y = stops_b4_branch - 1;
+		name = stop_names[y++];
 		stop_ash[j] = new google.maps.Marker({
 			animation: google.maps.Animation.DROP,
 			position: stations_ash[j],
@@ -128,7 +128,7 @@ function draw_station(){
 			title: stop_names[i],
 			icon: t_logo
 			});
-		y++;
+		
 		event_listener(name, stop_ash[j]);
 		}
 	for (w = 0; w < brn_stops; w++){
