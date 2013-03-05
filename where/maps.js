@@ -229,7 +229,7 @@ function find_friends() {
 
 function WC_location(place){
 	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
-	var theirdist = WC_dist(place.loc.latitude, place.loc.longitude);
+	
 	var message = "Congrats! You found " + place.name + " at " + place.loc.note;
 	
 	var theirInfo = new google.maps.InfoWindow({
@@ -254,20 +254,6 @@ function WC_location(place){
 	google.maps.event.addListener(markerWC, 'click', function(event){
 		theirInfo.open(map, markerWC);
 	});
-}
-
-function WC_dist(theirlat, theirlon){
-	if (navigator.geolocation){
-		console.log(navigator.geolocation.getCurrentPosition(myPositionWC));
-		}
-}
-
-function myPositionWC(position) {
-	var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	
-	theirLat = position.coords.latitude;
-	theirLon = position.coords.longitude;
-	
 }
 
 function station_coordinates(){
