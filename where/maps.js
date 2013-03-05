@@ -230,8 +230,9 @@ function find_friends() {
 function WC_location(place){
 	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
 	dist = haversine(myLat, myLon, place.loc.latitude, place.loc.longitude);
-	var message = "Congrats! You found " + place.name + " at " + place.loc.note " which is " + dist + " miles away!";
 	console.log(dist);
+	var message = "Congrats! You found " + place.name + " at " + place.loc.note " which is " + dist + " miles away!";
+	
 	var theirInfo = new google.maps.InfoWindow({
 		content: message
 	});
