@@ -95,8 +95,6 @@ function draw_closest(lat1, lon1, stop){
 	});
 	
 	closest_route.setMap(map);
-	
-	myLat = lat1;
 }
 
 function draw_station(){
@@ -231,9 +229,8 @@ function find_friends() {
 
 function WC_location(place){
 	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
-	//dist = distance_WC(place.loc.latitude, place.loc.longitude);
-	console.log(myLat);
-	var message = "Congrats! You found " + place.name + " at " + place.loc.note;// + " which is " + dist + " miles away!";
+	var theirdist = WC_dist(place.loc.latitude, place.loc.longitude);
+	var message = "Congrats! You found " + place.name + " at " + place.loc.note;
 	
 	var theirInfo = new google.maps.InfoWindow({
 		content: message
@@ -259,14 +256,12 @@ function WC_location(place){
 	});
 }
 
-/*function distance_WC(theirlat, theirlon){
-	
-	dist = haversine(myLat, myLon, theirlat, theirlon);
-	console.log(myLat, myLon, theirlat, theirlon);
-	return dist;
-
-}*/
-
+function WC_dist(theirlat, theirlon){
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(myPosition);
+		}
+	console.log(myPosition.coords.latitude);
+}
 
 function station_coordinates(){
 	stations_all[0] = new google.maps.LatLng(42.395382,-71.142633);
