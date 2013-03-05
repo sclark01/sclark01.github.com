@@ -104,7 +104,7 @@ function draw_station(){
 	t_logo = 'images/tlogo.png';
 
 	
-	for (i = 0; i < stops_b4_branch; i++){
+	for (i = 0; i < num_stops; i++){
 			var name = stop_names[i];
 			
 			
@@ -112,12 +112,13 @@ function draw_station(){
 				animation: google.maps.Animation.DROP,
 				position: stations_all[i],
 				map: map,
-				title: stop_names[i],
+				title: "",
 				icon: t_logo
 				});
 			
 			event_listener(name, stop_all[i]);
-				
+			}
+/*				
 	for (j = 0; j < ash_stops; j++){
 		var y = stops_b4_branch - 1;
 		name = stop_names[y++];
@@ -125,7 +126,7 @@ function draw_station(){
 			animation: google.maps.Animation.DROP,
 			position: stations_ash[j],
 			map: map,
-			title: stop_names[i],
+			title: "",
 			icon: t_logo
 			});
 		
@@ -136,12 +137,12 @@ function draw_station(){
 			animation: google.maps.Animation.DROP,
 			position: stations_brn[w],
 			map: map,
-			title: stop_names[i],
+			title: "",
 			icon: t_logo
 			});
 		}
 		y++;			
-	}
+	} */
 	paths();
 }
 
