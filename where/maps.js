@@ -4,10 +4,12 @@ var stations_all = [];
 var stations_ash = [];
 var stations_brn = [];
 var stop_names = [];
+var station_info = [];
 var num_stops = 22;
 var stops_b4_branch = 13;
 var ash_stops = 5;
 var brn_stops = 6;
+
 
 function run() {
 
@@ -97,7 +99,7 @@ function draw_station(){
 	var stop_all = [];
 	var stop_ash = [];
 	var stop_brn = [];
-	var station_info = [];
+	
 
 	t_logo = 'images/tlogo.png';
 
