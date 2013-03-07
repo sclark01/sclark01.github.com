@@ -41,7 +41,7 @@ function draw_map() {
 
 function get_location(){
 	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(showPosition); //sometimes this function doesn't run...
+		navigator.geolocation.getCurrentPosition(showPosition); 
 		}
 	else {
 		alert("GeoLocation is not enabled on this device");
@@ -75,8 +75,6 @@ function showPosition(position){
 		title: "Current Location"
 	});
 	
-	
-
 	myInfo.open(map, marker);	
 	
 	google.maps.event.addListener(marker, 'click', function(event){
@@ -274,7 +272,7 @@ function WC_location(place){
 	var theirLatLng = new google.maps.LatLng(place.loc.latitude, place.loc.longitude);
 	dist = haversine(myLat, myLon, place.loc.latitude, place.loc.longitude);
 	
-	var message = "Congrats! You found " + place.name + " at " + place.loc.note + " which is " + dist + " miles away!";
+	var message = "Congrats! You found " + place.name + " at " + place.loc.note + " which is " + dist + " miles away from you!";
 	
 	var theirInfo = new google.maps.InfoWindow({
 		content: message

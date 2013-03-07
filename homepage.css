@@ -58,6 +58,12 @@ a:hover{
 	right: 15%;
 }
 
+.center {
+	position: fixed;
+	top: 87%;
+	right: 43%
+}
+
 .mobileonly {
 	display: none;
 }
