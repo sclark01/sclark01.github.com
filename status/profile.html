@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Fecesbook</title>
+<script lanuage="javascript">
+
+var text = null;
+var old_text = null;
+var today = new Date();
+var output;
+
+function init(){
+
+for (key in localStorage) {
+			output = localStorage[key];
+			add_text(output);
+		}
+		
+
+}
+
+function getelement()
+{
+
+	d = ('0' + today.getDate()).slice(-2);
+	m = ('0' + (today.getMonth() + 1)).slice(-2);
+	y = today.getFullYear();
+	h = ('0' + today.getHours()).slice(-2);
+	min = ( '0' + today.getMinutes()).slice(-2);
+
+
+	update = document.getElementById("msg").value;
+	document.getElementById("msg").value = "";
+	update = m + '/' + d + '/' + y + " " + h + ':' + min + " - " + update;
+	
+	localStorage[today.getTime()] = update;
+	add_text(update);
+}
+	
+function add_text(update){
+	text = document.createElement("p");
+	txtNode = document.createTextNode(update); 
+	text.appendChild(txtNode);
+	document.getElementById("status").insertBefore(text, old_text);
+
+	old_text = text;
+
+}
+
+</script>
+
+</head>
+
+<body onload="init()">
+	<h1>Fecebook</h1>
+	<div id="nav">
+		<ul>
+			<li id="home">Home</li>
+			<li id="groups">Groups</li>
+			<li id="profile">Profile</li>
+			<li id="contacts">Contacts</li>
+			<li id="inbox">Inbox</li>
+			<li id="applications">Applications</li>
+		</ul>
+	</div>
+	<h2 id="fullname">Barney Gumble</h2>
+	<p><img src="https://s3.amazonaws.com/tufts-cs-mchow-images/barneymug.gif" alt="profile" /></p>
+	<h3>What are you thinking about? <input type="text" id="msg" name="msg" size="30" onchange="getelement()" /></h3>
+	<h3>Updates</h3>
+	<div id="status">
+	</div>
+	<div id="yesterday">
+		<h3>Updates from yesterday:</h3>
+		<ul>
+			<li>Alice is now connected to Bob</li>
+			<li>Tom recommends Jerry</li>
+			<li>Harry just returned from a trip from Curaco</li>
+		</ul>
+	</div>
+	<div id="longlongtimeago">
+		<h3>Updates from long long time ago:</h3>
+		<ul>
+			<li>Harry just returned from a trip from Curaco</li>
+			<li>Joan is now connected to Mary</li>
+			<li>Steven is now connected to James</li>
+		</ul>
+	</div>
+</body>
+</html>
