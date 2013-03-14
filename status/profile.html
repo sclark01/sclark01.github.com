@@ -34,8 +34,8 @@ function getelement()
 	update = document.getElementById("msg").value;
 	document.getElementById("msg").value = "";
 	update = m + '/' + d + '/' + y + " " + h + ':' + min + " - " + update;
-	console.log(today.getTime());
-	localStorage[today.getTime()] = update;
+	
+	
 	add_text(update);
 	
 }
@@ -46,7 +46,7 @@ function add_text(update){
 	txtNode = document.createTextNode(update); 
 	text.appendChild(txtNode);
 	document.getElementById("status").insertBefore(text, old_text);
-
+	localStorage[today.getTime()] = update;
 	old_text = text;
 
 }
