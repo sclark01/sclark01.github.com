@@ -37,9 +37,11 @@ function getelement()
 	
 	localStorage[today.getTime()] = update;
 	add_text(update);
+	
 }
 	
 function add_text(update){
+	console.log(update);
 	text = document.createElement("p");
 	txtNode = document.createTextNode(update); 
 	text.appendChild(txtNode);
