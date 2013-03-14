@@ -8,7 +8,7 @@
 
 var text = null;
 var old_text = null;
-var today = new Date();
+var today; 
 var output;
 
 function init(){
@@ -23,7 +23,7 @@ for (key in localStorage) {
 
 function getelement()
 {
-
+	today = newDate();
 	d = ('0' + today.getDate()).slice(-2);
 	m = ('0' + (today.getMonth() + 1)).slice(-2);
 	y = today.getFullYear();
@@ -35,7 +35,7 @@ function getelement()
 	document.getElementById("msg").value = "";
 	update = m + '/' + d + '/' + y + " " + h + ':' + min + " - " + update;
 
-	localStorage[today.getTime() + today.getMilliseconds()] = update;
+	localStorage[today.getTime(] = update;
 	add_text(update);
 	
 }
