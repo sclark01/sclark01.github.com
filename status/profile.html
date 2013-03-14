@@ -34,9 +34,8 @@ function getelement()
 	update = document.getElementById("msg").value;
 	document.getElementById("msg").value = "";
 	update = m + '/' + d + '/' + y + " " + h + ':' + min + " - " + update;
-	
-	index = today.getTime();
-	localStorage[index++] = update;
+
+	localStorage[today.getTime()] = update;
 	add_text(update);
 	
 }
