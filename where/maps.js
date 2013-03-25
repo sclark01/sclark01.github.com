@@ -10,7 +10,7 @@ var stops_b4_branch = 13;
 var ash_stops = 5;
 var brn_stops = 6;
 var request_WC = new XMLHttpRequest();
-//var request_stat = new XMLHttpRequest();
+var request_stat = new XMLHttpRequest();
 var position;
 var myLat;
 var myLon;
@@ -101,7 +101,7 @@ function draw_closest(lat1, lon1, stop){
 function draw_station(){
 	station_coordinates();
 	names();
-	//get_times();
+	get_times();
 }
 
 function build_marker(stop_stat, count_stat) {	
@@ -157,11 +157,11 @@ var info = name + ": <br>";
 
 
 
-/*function get_times(){
-	request_stat.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
+function get_times(){
+	request_stat.open("GET", "mbtamap.herokuapp.com", true);
 	request_stat.send(null);
 	request_stat.onreadystatechange = parse_stat;
-}*/
+}
 
 function parse_stat(){
 	if (request_stat.readyState == 4) {
